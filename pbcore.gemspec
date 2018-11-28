@@ -5,7 +5,7 @@ require "pbcore/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "pbcore"
-  spec.version       = Pbcore::VERSION
+  spec.version       = PBCore::VERSION
   spec.authors       = ["Andrew Myers"]
   spec.email         = ["andrew_myers@wgbh.org"]
 

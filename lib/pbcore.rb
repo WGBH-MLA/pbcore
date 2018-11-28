@@ -1,5 +1,5 @@
 require "pbcore/version"
 
-module Pbcore
+module PBCore
   # Your code goes here...
 end

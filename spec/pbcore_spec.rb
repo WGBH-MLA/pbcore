@@ -1,5 +1,5 @@
-RSpec.describe Pbcore do
+RSpec.describe PBCore do
   it "has a version number" do
-    expect(Pbcore::VERSION).not_to be nil
+    expect(PBCore::VERSION).not_to be nil
   end
 end
