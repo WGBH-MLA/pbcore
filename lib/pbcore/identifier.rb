@@ -1,6 +1,11 @@
+require 'pbcore/base'
+
 module PBCore
   class Identifier < Base
     value :value
-    attribute :source
+
+    build_xml do |xml|
+      xml.pbcoreIdentifier(value, source: source)
+    end
   end
 end
