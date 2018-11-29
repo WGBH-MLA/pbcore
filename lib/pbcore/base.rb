@@ -40,7 +40,7 @@ module PBCore
     # Builds the xml using #build with a new instance of Nokogiri::XML::Builder
     # and immediately calls to_xml on it.
     def to_xml
-      build(Nokogiri::XML::Builder.new).to_xml
+      build.to_xml
     end
   end
 end
