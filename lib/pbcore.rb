@@ -1,7 +1,9 @@
 require "pbcore/version"
+require "pbcore/errors"
 
 module PBCore
-  autoload :Base,                     'pbcore/base'
+  autoload :Element,                  'pbcore/element'
+  autoload :Attributes,               'pbcore/attributes'
   autoload :DescriptionDocument,      'pbcore/description_document'
   autoload :Identifier,               'pbcore/identifier'
   autoload :Title,                    'pbcore/title'

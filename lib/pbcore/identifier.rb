@@ -1,7 +1,7 @@
-require 'pbcore/base'
+require 'pbcore/element'
 
 module PBCore
-  class Identifier < Base
+  class Identifier < Element
     value :value
 
     build_xml do |xml|

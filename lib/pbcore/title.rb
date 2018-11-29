@@ -1,7 +1,7 @@
-require 'pbcore/base'
+require 'pbcore/element'
 
 module PBCore
-  class Title < Base
+  class Title < Element
     attribute :titleType, as: :title_type
 
     build_xml do |xml|
