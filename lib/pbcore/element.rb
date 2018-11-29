@@ -16,16 +16,19 @@ module PBCore
     attribute :annotation
     attribute :version
 
-    # Define the class interfaces for all PBCore elements.
-    class << self
-      attr_reader :build_block
+    def attributes
+      self.class.sax_config.top_level_attributes
+    end
 
-      # Class method to allow extended classes to declaratively the logic used
-      # to build XML using Nokogiri::XML::Builder.
-      def build_xml(&block)
-        raise ArgumentError, "#{self.class}.build_xml requires a block with one parameter" unless block_given? && block.arity == 1
-        @build_block = block
-      end
+    # Returns a hash of attrubetes as the should appear in the XML.
+    def xml_attributes_hash
+      Hash[
+        attributes.map do |attr|
+          # No accessor here for attr.as, so that's why we use
+          # instance_variable_get(:@as)
+          [ attr.name, send(attr.instance_variable_get(:@as)) ]
+        end
+      ]
     end
 
     # Executes the block defined with the class method `build_xml`. Uses a
@@ -42,6 +45,18 @@ module PBCore
     # and immediately calls to_xml on it.
     def to_xml
       build.to_xml
+    end
+
+    # Define the class interfaces for all PBCore elements.
+    class << self
+      attr_reader :build_block
+
+      # Class method to allow extended classes to declaratively the logic used
+      # to build XML using Nokogiri::XML::Builder.
+      def build_xml(&block)
+        raise ArgumentError, "#{self.class}.build_xml requires a block with one parameter" unless block_given? && block.arity == 1
+        @build_block = block
+      end
     end
   end
 end
