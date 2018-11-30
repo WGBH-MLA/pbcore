@@ -8,4 +8,12 @@ module PBCore
   autoload :Identifier,               'pbcore/identifier'
   autoload :Title,                    'pbcore/title'
   autoload :Description,              'pbcore/description'
+
+  autoload :Creator,                  'pbcore/creator'
+  # Creator.autoload :Creator,          'pbcore/creator/creator'
+  # Creator.autoload :Role,             'pbcore/creator/role'
+
+  autoload :Coverage,                 'pbcore/coverage'
+  # Coverage.autoload :Coverage,        'pbcore/coverage/coverage'
+  # Coverage.autoload :Type,            'pbcore/coverage/type'
 end

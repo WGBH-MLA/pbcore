@@ -42,4 +42,14 @@ module PBCore
   def self.fail_if_base_is_not_pbcore_element(included_module:, base:)
     raise BaseIsNotPBCoreElement.new(included_module: included_module, base: base) unless base.ancestors.include? PBCore::Element
   end
+
+  class ElementMissingBuildXMLBlock < Error
+    def initialize(element_class:)
+      super("Element class #{element_class} does not have a block for building xml. Create one by passing a block to #{element_class}.build_xml")
+    end
+  end
+
+  def self.fail_if_missing_build_xml_block(element_class:)
+    raise ElementMissingBuildXMLBlock.new(element_class: element_class) unless element_class.build_block
+  end
 end
