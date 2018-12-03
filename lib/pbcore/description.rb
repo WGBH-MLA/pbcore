@@ -2,9 +2,12 @@ require 'pbcore/element'
 
 module PBCore
   class Description < Element
+    element :pbcoreDescription, as: :value
+    attribute :descriptionType, as: :type
+    attribute :descriptionTypeRef, as: :type_ref
+
     build_xml do |xml|
-      attrs = { source: source }.compact
-      xml.pbcoreDescription(value, attrs)
+      xml.pbcoreDescription(value, xml_attributes_hash.compact)
     end
   end
 end
