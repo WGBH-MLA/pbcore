@@ -1,7 +1,7 @@
-require 'pbcore/base'
+require 'pbcore/element'
 
 module PBCore
-  class Description < Base
+  class Description < Element
     build_xml do |xml|
       attrs = { source: source }.compact
       xml.pbcoreDescription(value, attrs)

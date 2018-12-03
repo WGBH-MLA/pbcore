@@ -2,8 +2,9 @@ require 'sax-machine'
 
 module PBCore
   # TODO: decouple XML building behavior from schema-related declarations.
-  class Base
+  class Element
     include SAXMachine
+    include PBCore::Attributes::Common
 
     # Defines which accessor is used to get the value within an element.
     # Here we defined it be simply :value.
