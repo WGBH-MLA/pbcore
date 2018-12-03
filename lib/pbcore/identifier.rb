@@ -2,10 +2,10 @@ require 'pbcore/element'
 
 module PBCore
   class Identifier < Element
-    value :value
+    element :pbcoreIdentifier, as: :value
 
     build_xml do |xml|
-      xml.pbcoreIdentifier(value, source: source)
+      xml.pbcoreIdentifier(value, xml_attributes_hash.compact)
     end
   end
 end
