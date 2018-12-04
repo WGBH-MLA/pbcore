@@ -21,6 +21,7 @@ module PBCore
     autoload :Language,             'pbcore/instantiation/language'
     autoload :AlternativeModes,     'pbcore/instantiation/alternative_modes'
     autoload :EssenceTrack,         'pbcore/instantiation/essence_track'
+    autoload :Relation,             'pbcore/instantiation/relation'
 
     elements :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier
     elements :instantiationDate, as: :dates, class: PBCore::Instantiation::Date
@@ -41,6 +42,7 @@ module PBCore
     elements :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language
     element  :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes
     element  :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
+    elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
 
     build_xml do |xml|
       xml.pbcoreInstantiation(xml_attributes_hash.compact) do |xml|
