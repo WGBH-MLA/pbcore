@@ -1,0 +1,8 @@
+* Some odd case links?
+
+* 404's for
+  - menu item "elements/pbcoreInstantiation", but "elements/pbcoreinstantiation" works
+  - menu item "instantiationtracks", but "instantiationTracks" works
+* malformed `</pre` tag getting displayed on instantiationphysical page.
+* examples for instantiationDimensions has "unitsofmeasure" attribute, which isn't camel-cased, but it should be.
+* is instantiationTimeStart supposed to be repeatable? Not sure what that means if there are > 1.

@@ -21,5 +21,6 @@ module PBCore
   autoload :Publisher,                'pbcore/publisher'
   autoload :RightsSummary,            'pbcore/rights_summary'
   autoload :Annotation,               'pbcore/annotation'
-  autoload :Extension,               'pbcore/extension'
+  autoload :Extension,                'pbcore/extension'
+  autoload :Instantiation,            'pbcore/instantiation' 
 end
