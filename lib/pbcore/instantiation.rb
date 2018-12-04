@@ -20,6 +20,7 @@ module PBCore
     autoload :ChannelConfiguration, 'pbcore/instantiation/channel_configuration'
     autoload :Language,             'pbcore/instantiation/language'
     autoload :AlternativeModes,     'pbcore/instantiation/alternative_modes'
+    autoload :EssenceTrack,         'pbcore/instantiation/essence_track'
 
     elements :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier
     elements :instantiationDate, as: :dates, class: PBCore::Instantiation::Date
@@ -39,6 +40,7 @@ module PBCore
     element  :instantiationChannelConfiguration, as: :channel_configuration, class: PBCore::Instantiation::ChannelConfiguration
     elements :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language
     element  :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes
+    element  :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
 
     build_xml do |xml|
       xml.pbcoreInstantiation(xml_attributes_hash.compact) do |xml|

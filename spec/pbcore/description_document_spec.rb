@@ -1,5 +1,4 @@
 require 'spec_helper'
-# require 'pbcore/description_document'
 require 'equivalent-xml'
 
 RSpec.describe PBCore::DescriptionDocument do
