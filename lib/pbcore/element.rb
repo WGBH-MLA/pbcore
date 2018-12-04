@@ -36,6 +36,7 @@ module PBCore
     # build the XML, and then returns the builder instance.
     def build(builder=nil)
       raise ArgumentError, "#{self.class}#build expects a Nokogiri::XML::Builder class, but #{builder.class} was given" unless builder.nil? || builder.is_a?(Nokogiri::XML::Builder)
+      PBCore.fail_if_missing_build_xml_block(element_class: self.class)
       builder ||= Nokogiri::XML::Builder.new
       instance_exec builder, &self.class.build_block
       builder
