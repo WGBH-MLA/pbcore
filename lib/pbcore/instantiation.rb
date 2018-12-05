@@ -22,6 +22,7 @@ module PBCore
     autoload :AlternativeModes,     'pbcore/instantiation/alternative_modes'
     autoload :EssenceTrack,         'pbcore/instantiation/essence_track'
     autoload :Relation,             'pbcore/instantiation/relation'
+    autoload :Rights,               'pbcore/instantiation/rights'
 
     elements :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier
     elements :instantiationDate, as: :dates, class: PBCore::Instantiation::Date
@@ -43,6 +44,7 @@ module PBCore
     element  :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes
     element  :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
     elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
+    elements :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights
 
     build_xml do |xml|
       xml.pbcoreInstantiation(xml_attributes_hash.compact) do |xml|

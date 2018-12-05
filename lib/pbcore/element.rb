@@ -58,6 +58,13 @@ module PBCore
         raise ArgumentError, "#{self.class}.build_xml requires a block with one parameter" unless block_given? && block.arity == 1
         @build_block = block
       end
+
+      def has_time_attributes_on(element)
+        raise ArgumentError, "has_time_attributes_on method requires a symbol" unless element.is_a? Symbol
+        self.element element, value: :startTime, as: :start_time
+        self.element element, value: :endTime, as: :end_time
+        self.element element, value: :timeAnnotation, as: :time_annotation
+      end
     end
   end
 end
