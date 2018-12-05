@@ -11,12 +11,26 @@ RSpec.describe PBCore::DescriptionDocument do
     it 'has child elements' do
       expect(subject).to have_parsed_xml_child_elements identifiers: PBCore::Identifier,
                                                         titles: PBCore::Title,
-                                                        descriptions: PBCore::Description
+                                                        descriptions: PBCore::Description,
+                                                        asset_types: PBCore::AssetType,
+                                                        asset_dates: PBCore::AssetDate,
+                                                        subjects: PBCore::Subject,
+                                                        genres: PBCore::Genre,
+                                                        relations: PBCore::Relation,
+                                                        coverages: PBCore::Coverage,
+                                                        audience_levels: PBCore::AudienceLevel,
+                                                        audience_ratings: PBCore::AudienceRating,
+                                                        creators: PBCore::Creator,
+                                                        contributors: PBCore::Contributor,
+                                                        publishers: PBCore::Publisher,
+                                                        rights_summaries: PBCore::RightsSummary,
+                                                        annotations: PBCore::Annotation,
+                                                        extensions: PBCore::Extension
     end
 
     describe '.to_xml' do
       it 'outputs the XML equivalent to what was parsed' do
-        expect(subject.to_xml).to be_equivalent_to xml
+        expect(subject.to_xml).to be_equivalent_to(xml)
       end
     end
   end

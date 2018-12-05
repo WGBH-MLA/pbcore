@@ -10,8 +10,8 @@ module PBCore
 
     build_xml do |xml|
       xml.pbcoreRelation(xml_attributes_hash.compact) do |xml|
-        type.build(xml)
-        identifier.build(xml)
+        type.build(xml) if type
+        identifier.build(xml) if identifier
       end
     end
   end

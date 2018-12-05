@@ -9,7 +9,7 @@ module PBCore
     attribute :subjectTypeAnnotation, as: :type_annotation
 
     build_xml do |xml|
-      xml.pbcoreDescription(value, xml_attributes_hash.compact)
+      xml.pbcoreSubject(value, xml_attributes_hash.compact)
     end
   end
 end

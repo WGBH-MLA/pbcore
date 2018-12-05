@@ -21,9 +21,20 @@ end
 
 RSpec::Matchers.define :have_parsed_xml_child_elements do |child_elements|
   match do |pbcore_element|
-    child_elements.reduce(true) do |memo, accessor_and_child_element_class|
+    child_elements.reduce(true) do |result, accessor_and_child_element_class|
       accessor, child_element_class = accessor_and_child_element_class
-      memo && Array(pbcore_element.send(accessor)).all? { |obj| obj.is_a?(child_element_class) }
+      array_of_children = Array(pbcore_element.send(accessor))
+      this_result = array_of_children.all? { |obj| obj.is_a?(child_element_class) }
+      this_result &= array_of_children.count > 0
+      unless this_result
+        @missing_child_elements ||= []
+        @missing_child_elements << child_element_class
+      end
+      result && this_result
     end
+  end
+
+  failure_message do |pbcore_element|
+    "expected #{pbcore_element} to have parsed xml child elements #{@missing_child_elements.join(', ')}"
   end
 end

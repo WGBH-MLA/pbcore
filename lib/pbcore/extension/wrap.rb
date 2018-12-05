@@ -7,14 +7,16 @@ module PBCore
     autoload :Value,              'pbcore/extension/wrap/value'
 
     element :extensionElement, as: :element, class: PBCore::Extension::Wrap::Element
-    element :extensionValue, as: :value, class: PBCore::Extension::Wrap::Value
+    # Have to diverge from the naming convention here, because using just :value conflicts
+    # with special meaning for SAXMachine.
+    element :extensionValue, as: :extension_value, class: PBCore::Extension::Wrap::Value
     element :extensionAuthorityUsed, as: :authority_used, class: PBCore::Extension::Wrap::AuthorityUsed
 
     build_xml do |xml|
       xml.extensionWrap(xml_attributes_hash.compact) do |xml|
-        element.build(xml)
-        value.build(xml)
-        authority_used.build(xml)
+        element.build(xml) if element
+        extension_value.build(xml) if extension_value
+        authority_used.build(xml) if authority_used
       end
     end
   end
