@@ -11,8 +11,8 @@ module PBCore
 
     build_xml do |xml|
       xml.pbcoreCoverage(xml_attributes_hash.compact) do |xml|
-        coverage.build(xml)
-        type.build(xml)
+        coverage.build(xml) if coverage
+        type.build(xml) if type
       end
     end
   end

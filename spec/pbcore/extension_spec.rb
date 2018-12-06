@@ -10,15 +10,13 @@ RSpec.describe PBCore::Extension do
          <extensionValue>WNET.org</extensionValue>
          <extensionAuthorityUsed>http://www.loc.gov/standards/rights/METSRights.xsd</extensionAuthorityUsed>
        </extensionWrap>
-       <extensionEmbedded>???</extensionEmbedded
      </pbcoreExtension>"
   end
 
   context 'after parsing PBCore XML' do
     before { subject.parse(xml) }
     it 'has parsed child elements' do
-      expect(subject).to have_parsed_xml_child_elements wrap: PBCore::Extension::Wrap,
-                                                        embedded: PBCore::Extension::Embedded
+      expect(subject).to have_parsed_xml_child_elements wrap: PBCore::Extension::Wrap
     end
   end
 end

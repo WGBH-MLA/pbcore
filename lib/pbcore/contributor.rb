@@ -10,8 +10,8 @@ module PBCore
 
     build_xml do |xml|
       xml.pbcoreContributor(xml_attributes_hash.compact) do |xml|
-        contributor.build(xml)
-        role.build(xml)
+        contributor.build(xml) if contributor
+        role.build(xml) if role
       end
     end
   end

@@ -36,19 +36,19 @@ module PBCore
 
     build_xml do |xml|
       xml.instantiationEssenceTrack(xml_attributes_hash.compact) do |xml|
-        type.build(xml)
+        type.build(xml) if type
         identifiers.each { |identifier| identifier.build(xml) }
-        standard.build(xml)
-        encoding.build(xml)
-        data_rate.build(xml)
-        frame_rate.build(xml)
-        playback_speed.build(xml)
-        sampling_rate.build(xml)
-        bit_depth.build(xml)
-        frame_size.build(xml)
-        duration.build(xml)
-        aspect_ratio.build(xml)
-        time_start.build(xml)
+        standard.build(xml) if standard
+        encoding.build(xml) if encoding
+        data_rate.build(xml) if data_rate
+        frame_rate.build(xml) if frame_rate
+        playback_speed.build(xml) if playback_speed
+        sampling_rate.build(xml) if sampling_rate
+        bit_depth.build(xml) if bit_depth
+        frame_size.build(xml) if frame_size
+        duration.build(xml) if duration
+        aspect_ratio.build(xml) if aspect_ratio
+        time_start.build(xml) if time_start
         languages.each { |language| language.build(xml) }
         annotations.each { |annotation| annotation.build(xml) }
       end

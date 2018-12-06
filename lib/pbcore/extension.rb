@@ -10,8 +10,8 @@ module PBCore
 
     build_xml do |xml|
       xml.pbcoreExtension(xml_attributes_hash.compact) do |xml|
-        wrap.build(xml)
-        embedded.build(xml)
+        wrap.build(xml) if wrap
+        embedded.build(xml) if embedded
       end
     end
   end
