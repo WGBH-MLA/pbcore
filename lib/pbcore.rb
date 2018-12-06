@@ -22,5 +22,6 @@ module PBCore
   autoload :RightsSummary,            'pbcore/rights_summary'
   autoload :Annotation,               'pbcore/annotation'
   autoload :Extension,                'pbcore/extension'
-  autoload :Instantiation,            'pbcore/instantiation' 
+  autoload :Instantiation,            'pbcore/instantiation'
+  autoload :InstantiationDocument,    'pbcore/instantiation_document'
 end

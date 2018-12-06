@@ -20,15 +20,21 @@ module PBCore
       self.class.sax_config.top_level_attributes
     end
 
-    # Returns a hash of attrubetes as the should appear in the XML.
+    # Returns a hash of attrubutes as the should appear in the XML.
     def xml_attributes_hash
-      Hash[
+      xml_attr_hash = Hash[
         attributes.map do |attr|
           # No accessor here for attr.as, so that's why we use
           # instance_variable_get(:@as)
           [ attr.name, send(attr.instance_variable_get(:@as)) ]
         end
       ]
+      # Append the time attributes, which are not declared using `attribute`
+      # class method because of how SAXMachine works.
+      xml_attr_hash[:startTime] = start_time if self.respond_to? :start_time
+      xml_attr_hash[:endTime] = end_time if self.respond_to? :end_time
+      xml_attr_hash[:timeAnnotation] = time_annotation if self.respond_to? :time_annotation
+      xml_attr_hash
     end
 
     # Executes the block defined with the class method `build_xml`. Uses a

@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation < Element
+  class InstantiationDocument < Element
     autoload :Identifier,           'pbcore/instantiation/identifier'
     autoload :Date,                 'pbcore/instantiation/date'
     autoload :Dimensions,           'pbcore/instantiation/dimensions'
@@ -25,6 +25,8 @@ module PBCore
     autoload :Relation,             'pbcore/instantiation/relation'
     autoload :Rights,               'pbcore/instantiation/rights'
 
+    has_time_attributes_on :pbcoreInstantiationDocument
+
     elements :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier
     elements :instantiationDate, as: :dates, class: PBCore::Instantiation::Date
     elements :instantiationDimensions, as: :dimensions, class: PBCore::Instantiation::Dimensions
@@ -43,13 +45,14 @@ module PBCore
     element  :instantiationChannelConfiguration, as: :channel_configuration, class: PBCore::Instantiation::ChannelConfiguration
     elements :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language
     element  :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes
-    element  :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
+    elements  :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
     elements :instantiationExtensions, as: :extensions, class: PBCore::Instantiation::Extension
     elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
     elements :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights
 
     build_xml do |xml|
-      xml.pbcoreInstantiation(xml_attributes_hash.compact) do |xml|
+      attrs = xml_attributes_hash.merge(namespace_attributes).compact
+      xml.pbcoreInstantiationDocument(attrs) do |xml|
         identifiers.each { |identifier| identifier.build(xml) }
         dates.each { |date| date.build(xml) }
         dimensions.each { |dimensions_element| dimensions_element.build(xml) }
@@ -68,8 +71,23 @@ module PBCore
         channel_configuration.build(xml) if channel_configuration
         languages.each { |language| language.build(xml) }
         alternative_modes.build(xml) if alternative_modes
+        essence_tracks.each { |essence_track| essence_track.build(xml) }
         extensions.each { |extension| extension.build(xml) }
+        relations.each { |relation| relation.build(xml) }
+        rights.each { |rights_element| rights_element.build(xml) }
       end
     end
+
+    private
+      # NOTE: For some reason, these attributes will not parse with SAXMachine
+      # attributes.
+      # TODO: Is there a better way to set namespace attributes?
+      def namespace_attributes
+        {
+          'xmlns' => "http://pbcore.org/PBCore/PBCoreNamespace.html",
+          'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
+          'xsi:schemaLocation' => "http://pbcore.org/PBCore/PBCoreNamespace.html https://raw.githubusercontent.com/WGBH/PBCore_2.1/master/pbcore-2.1.xsd"
+        }
+      end
   end
 end
