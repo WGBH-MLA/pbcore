@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<pbcoreInstantiation xmlns="http://pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pbcore.org/PBCore/PBCoreNamespace.html https://raw.githubusercontent.com/WGBH/PBCore_2.1/master/pbcore-2.1.xsd">
+    <instantiationIdentifier annotation="file name">news_20071211.mp3</instantiationIdentifier>
+    <instantiationIdentifier source="WGBH BARCODE">0000313536</instantiationIdentifier>
+    <instantiationDate dateType="Published">2007-07-02T18:10+02:24</instantiationDate>
+    <instantiationDate dateType="Issued">2007-06-02</instantiationDate>
+    <instantiationDimensions unitsOfMeasure="pixels">100x200</instantiationDimensions>
+    <instantiationDimensions unitsOfMeasure="inches">5x7</instantiationDimensions>
+    <instantiationPhysical>Shellac disc</instantiationPhysical>
+    <instantiationDigital source="IANA MIME Media types" ref="http://www.iana.org/assignments/media-types/video/">H264</instantiationDigital>
+    <instantiationStandard source="PBCore instantiationStandard/video" ref="http://pbcore.org/vocabularies/instantiationStandard/video%23ntsc" profile="Op1a">NTSC</instantiationStandard>
+    <instantiationLocation>drive2/sourcefiles/20070910/458.wmv</instantiationLocation>
+    <instantiationMediaType source="PBCore instantiationMediaType" ref="http://metadataregistry.org/concept/show/id/1491.html">Moving Image</instantiationMediaType>
+    <instantiationAlternativeModes>SAP in English</instantiationAlternativeModes>
+    <instantiationChannelConfiguration>8-track stereo</instantiationChannelConfiguration>
+    <instantiationColors source="instantiationColors" ref="http://metadataregistry.org/conceptprop/list/concept_id/1484.html" annotation="sepia">Toned</instantiationColors>
+    <instantiationDataRate unitsOfMeasure="Mbit/s">27</instantiationDataRate>
+    <instantiationDuration>00:56:46</instantiationDuration>
+    <instantiationEssenceTrack>
+      <essenceTrackType>Video</essenceTrackType>
+      <essenceTrackIdentifier source="Digital Asset Management System">898_Laura.wav</essenceTrackIdentifier>
+      <essenceTrackStandard source="PBCore essenceTrack/video" ref="http://pbcore.org/vocabularies/essenceTrackStandard/video%23ntsc">NTSC</essenceTrackStandard>
+      <essenceTrackEncoding source="PBCore essenceTrackEncoding" ref="http://metadataregistry.org/concept/show/id/2889.html">H.264/MPEG-4 AVC: QuickTime H.264</essenceTrackEncoding>
+      <essenceTrackDataRate unitsOfMeasure="kbps" annotation="compressed">1700</essenceTrackDataRate>
+      <essenceTrackFrameRate unitsOfMeasure="fps" annotation="interlaced">29.97</essenceTrackFrameRate>
+      <essenceTrackPlaybackSpeed unitsOfMeasure="rpm">78</essenceTrackPlaybackSpeed>
+      <essenceTrackSamplingRate unitsOfMeasure="kHz">44.1</essenceTrackSamplingRate>
+      <essenceTrackBitDepth unitsOfMeasure="foo" annotation="color">10</essenceTrackBitDepth>
+      <essenceTrackAspectRatio unitsOfMeasure="foo" source="PBCore essenceTrackAspectRatio" ref="http://metadataregistry.org/conceptprop/list/concept_id/1439.html">4:3 (16:9 letterbox)</essenceTrackAspectRatio>
+      <essenceTrackDuration>00:56:22:13</essenceTrackDuration>
+      <essenceTrackAnnotation annotationType="Condition note">Audio reel shows faint signs of mold</essenceTrackAnnotation>
+      <essenceTrackFrameSize unitsOfMeasure="pixels" source="PBCore essenceTrackFrameSize" ref="http://metadataregistry.org/conceptprop/list/concept_id/1461.html" annotation="full screen">720x480</essenceTrackFrameSize>
+      <essenceTrackLanguage source="IS0 639.2" ref="http://id.loc.gov/vocabulary/iso639-2/eng">eng</essenceTrackLanguage>
+      <essenceTrackTimeStart>00:00:32:05</essenceTrackTimeStart>
+    </instantiationEssenceTrack>
+    <instantiationFileSize unitsOfMeasure="kB">125</instantiationFileSize>
+    <instantiationLanguage source="IS0 639.2" ref="http://id.loc.gov/vocabulary/iso639-2/eng">eng</instantiationLanguage>
+    <instantiationRelation>
+      <instantiationRelationType source="PBCore relationType" ref="http://metadataregistry.org/concept/list/vocabulary_id/161.html">Derived from</instantiationRelationType>
+      <instantiationRelationIdentifier>Barcode238898</instantiationRelationIdentifier>
+    </instantiationRelation>
+    <instantiationRights startTime="00:00:10" endTime="00:10:00" timeAnnotation="annotating time">
+      <rightsSummary>Donation agreement provides rights to give access to users on premises</rightsSummary>
+      <rightsLink>www.therightsstuff.org</rightsLink>
+    </instantiationRights>
+    <instantiationTimeStart>00:23:30:15</instantiationTimeStart>
+    <instantiationTimeStart>00:24:40:45</instantiationTimeStart>
+    <instantiationTracks>1 video track, 1 audio track</instantiationTracks>
+</pbcoreInstantiation>

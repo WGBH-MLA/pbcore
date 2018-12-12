@@ -6,10 +6,20 @@ end
 
 RSpec::Matchers.define :have_parsed_xml_attribute_values do |attributes_hash|
   match do |pbcore_element|
-    attributes_hash.reduce(true) do |memo, attr_and_val|
+    attributes_hash.reduce(true) do |result, attr_and_val|
       attr_name, attr_val = attr_and_val
-      memo && pbcore_element.send(attr_name) == attr_val
+      this_result = pbcore_element.send(attr_name) == attr_val
+      unless this_result
+        @missing_attrs ||= {}
+        @missing_attrs[attr_name] = attr_val
+      end
+      result && this_result
     end
+  end
+
+  failure_message do |pbcore_element|
+    missing_attrs_str = @missing_attrs.map{ |attr_name, attr_val| ":#{attr_name} => \"#{attr_val}\""}.join(', ')
+    "Expected #{pbcore_element} to have attribute values: #{missing_attrs_str}."
   end
 end
 

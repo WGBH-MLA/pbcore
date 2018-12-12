@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe PBCore::Instantiation::DataRate do
   subject { described_class.new }
   let(:xml) do
-    '<instantiationDataRate unitsOfMeasure="Mbit/s">27</instantiationDataRate> '
+    '<instantiationDataRate unitsOfMeasure="Mbit/s">27</instantiationDataRate>'
   end
 
   context 'after parsing PBCore XML' do
