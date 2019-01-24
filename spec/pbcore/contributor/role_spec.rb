@@ -4,7 +4,7 @@ RSpec.describe PBCore::Contributor::Role do
   subject { described_class.new }
 
   let(:xml) do
-    '<contributorRole source="PBCore contributorRole"
+    '<contributorRole portrayal="Mr. Big Round Yo Yo" source="PBCore contributorRole"
                       ref="http://metadataregistry.org/conceptprop/list/concept_id/1330.html">
        Instrumentalist
      </contributorRole>'
@@ -18,7 +18,8 @@ RSpec.describe PBCore::Contributor::Role do
 
     it 'has parsed attributes' do
       expect(subject).to have_parsed_xml_attribute_values source: "PBCore contributorRole",
-                                                          ref: "http://metadataregistry.org/conceptprop/list/concept_id/1330.html"
+                                                          ref: "http://metadataregistry.org/conceptprop/list/concept_id/1330.html",
+                                                          portrayal: "Mr. Big Round Yo Yo"
     end
   end
 end
