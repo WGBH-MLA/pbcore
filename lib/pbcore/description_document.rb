@@ -19,7 +19,7 @@ module PBCore
     elements :pbcoreRightsSummary, as: :rights_summaries, class: PBCore::RightsSummary
     elements :pbcoreAnnotation, as: :annotations, class: PBCore::Annotation
     elements :pbcoreExtension, as: :extensions, class: PBCore::Extension
-
+    elements :pbcoreInstantiation, as: :instantiations, class: PBCore::Instantiation
 
     build_xml do |xml|
       xml.pbcoreDescriptionDocument(namespace_attributes) do |xml|
@@ -40,6 +40,7 @@ module PBCore
         rights_summaries.each { |rights_summary| rights_summary.build(xml) }
         annotations.each { |annotation| annotation.build(xml) }
         extensions.each { |extension| extension.build(xml) }
+        instantiations.each { |instantiation| instantiation.build(xml) }
       end
     end
 
