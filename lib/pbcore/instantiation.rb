@@ -72,6 +72,7 @@ module PBCore
         alternative_modes.build(xml) if alternative_modes
         annotations.each { |annotation| annotation.build(xml) }
         extensions.each { |extension| extension.build(xml) }
+        essence_tracks.each { |essence_track| essence_track.build(xml) }
       end
     end
   end
