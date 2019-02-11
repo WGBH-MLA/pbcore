@@ -24,6 +24,7 @@ module PBCore
     autoload :Extension,            'pbcore/instantiation/extension'
     autoload :Relation,             'pbcore/instantiation/relation'
     autoload :Rights,               'pbcore/instantiation/rights'
+    autoload :Annotation,           'pbcore/instantiation/annotation'
 
     elements :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier
     elements :instantiationDate, as: :dates, class: PBCore::Instantiation::Date
@@ -47,6 +48,7 @@ module PBCore
     elements :instantiationExtensions, as: :extensions, class: PBCore::Instantiation::Extension
     elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
     elements :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights
+    elements :instantiationAnnotation, as: :annotations, class: PBCore::Instantiation::Annotation
 
     build_xml do |xml|
       xml.pbcoreInstantiation(xml_attributes_hash.compact) do |xml|
@@ -68,6 +70,7 @@ module PBCore
         channel_configuration.build(xml) if channel_configuration
         languages.each { |language| language.build(xml) }
         alternative_modes.build(xml) if alternative_modes
+        annotations.each { |annotation| annotation.build(xml) }
         extensions.each { |extension| extension.build(xml) }
       end
     end
