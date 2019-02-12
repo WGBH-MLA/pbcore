@@ -24,6 +24,7 @@ module PBCore
     autoload :Extension,            'pbcore/instantiation/extension'
     autoload :Relation,             'pbcore/instantiation/relation'
     autoload :Rights,               'pbcore/instantiation/rights'
+    autoload :Annotation,           'pbcore/instantiation/annotation'
 
     has_time_attributes_on :pbcoreInstantiationDocument
 
@@ -49,6 +50,7 @@ module PBCore
     elements :instantiationExtensions, as: :extensions, class: PBCore::Instantiation::Extension
     elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
     elements :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights
+    elements :instantiationAnnotation, as: :annotations, class: PBCore::Instantiation::Annotation
 
     build_xml do |xml|
       attrs = xml_attributes_hash.merge(namespace_attributes).compact
