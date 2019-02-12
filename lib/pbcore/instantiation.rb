@@ -44,7 +44,7 @@ module PBCore
     element  :instantiationChannelConfiguration, as: :channel_configuration, class: PBCore::Instantiation::ChannelConfiguration
     elements :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language
     element  :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes
-    element  :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
+    elements :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
     elements :instantiationExtensions, as: :extensions, class: PBCore::Instantiation::Extension
     elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
     elements :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights
