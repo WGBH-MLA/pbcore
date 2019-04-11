@@ -77,6 +77,7 @@ module PBCore
         extensions.each { |extension| extension.build(xml) }
         relations.each { |relation| relation.build(xml) }
         rights.each { |rights_element| rights_element.build(xml) }
+        annotations.each { |annotation| annotation.build(xml) }
       end
     end
 
