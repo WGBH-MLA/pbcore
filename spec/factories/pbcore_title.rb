@@ -1,8 +1,17 @@
+require 'pbcore'
+require 'faker'
+
 FactoryBot.define do
   factory :pbcore_title, class: PBCore::Title, parent: :pbcore_element do
-    type { "value of titleType attribute" }
-    type_source { "value of titleTypeSource attribute" }
-    type_ref { "value of titleTypeRef attribute" }
-    type_annotation { "value of titleTypeAnnotation attribute" }
+    skip_create
+
+    value { "#{Faker::Book.title} #{Faker::Hipster.sentence}" }
+
+    trait :alternative_title do
+      value { 'This Title is Alternative' }
+      type { 'Alternative' }
+    end
+
+    initialize_with { new(attributes) }
   end
 end
