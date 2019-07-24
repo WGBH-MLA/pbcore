@@ -9,7 +9,7 @@ module PBCore
     attribute :titleTypeAnnotation, as: :type_annotation
 
     build_xml do |xml|
-      xml.pbcoreTitle(value, xml_attributes_hash.compact)
+      xml.pbcoreTitle(value, xml_attributes.compact)
     end
   end
 end

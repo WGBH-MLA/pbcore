@@ -6,7 +6,7 @@ module PBCore
     attribute :portrayal, as: :portrayal
 
     build_xml do |xml|
-      xml.contributorRole(value, xml_attributes_hash.compact)
+      xml.contributorRole(value, xml_attributes.compact)
     end
   end
 end

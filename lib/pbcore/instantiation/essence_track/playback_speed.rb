@@ -5,7 +5,7 @@ module PBCore
     attribute :unitsOfMeasure, as: :units_of_measure
 
     build_xml do |xml|
-      xml.essenceTrackPlaybackSpeed(value, xml_attributes_hash.compact)
+      xml.essenceTrackPlaybackSpeed(value, xml_attributes.compact)
     end
   end
 end

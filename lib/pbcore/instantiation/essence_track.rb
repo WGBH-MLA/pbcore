@@ -18,6 +18,7 @@ module PBCore
     autoload :Language,       'pbcore/instantiation/essence_track/language'
     autoload :Annotation,     'pbcore/instantiation/essence_track/annotation'
 
+    element  :instantiationEssenceTrack, as: :value
     element  :essenceTrackType, as: :type, class: PBCore::Instantiation::EssenceTrack::Type
     elements :essenceTrackIdentifier, as: :identifiers, class: PBCore::Instantiation::EssenceTrack::Identifier
     element  :essenceTrackStandard, as: :standard, class: PBCore::Instantiation::EssenceTrack::Standard
@@ -35,7 +36,7 @@ module PBCore
     elements :essenceTrackAnnotation, as: :annotations, class: PBCore::Instantiation::EssenceTrack::Annotation
 
     build_xml do |xml|
-      xml.instantiationEssenceTrack(xml_attributes_hash.compact) do |xml|
+      xml.instantiationEssenceTrack(xml_attributes.compact) do |xml|
         type.build(xml) if type
         identifiers.each { |identifier| identifier.build(xml) }
         standard.build(xml) if standard
@@ -46,11 +47,12 @@ module PBCore
         sampling_rate.build(xml) if sampling_rate
         bit_depth.build(xml) if bit_depth
         frame_size.build(xml) if frame_size
-        duration.build(xml) if duration
         aspect_ratio.build(xml) if aspect_ratio
         time_start.build(xml) if time_start
+        duration.build(xml) if duration
         languages.each { |language| language.build(xml) }
         annotations.each { |annotation| annotation.build(xml) }
+        # TODO: no essen extension!?!
       end
     end
   end

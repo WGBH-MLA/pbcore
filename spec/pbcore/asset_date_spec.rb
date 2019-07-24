@@ -1,19 +1,11 @@
 require 'spec_helper'
 
 RSpec.describe PBCore::AssetDate do
-  subject { described_class.new }
-  let(:xml) do
-    '<pbcoreAssetDate dateType="example type">2001-02-03T09:30:01</pbcoreAssetDate>'
-  end
+  it_behaves_like "PBCore Element"
 
-  context 'after parsing PBCore XML' do
-    before { subject.parse(xml) }
-    it 'has a value' do
-      expect(subject).to have_parsed_xml_value "2001-02-03T09:30:01"
-    end
-
-    it 'has attribute values' do
-      expect(subject).to have_parsed_xml_attribute_values type: "example type"
-    end
+  describe 'class configuration' do
+    subject { described_class }
+    it { is_expected.to have_sax_machine_attribute 'dateType', as: :type }
+    it { is_expected.to have_sax_machine_value_element }
   end
 end

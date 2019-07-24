@@ -3,7 +3,7 @@ module PBCore
     element :essenceTrackLanguage, as: :value
 
     build_xml do |xml|
-      xml.essenceTrackLanguage(value, xml_attributes_hash.compact)
+      xml.essenceTrackLanguage(value, xml_attributes.compact)
     end
   end
 end

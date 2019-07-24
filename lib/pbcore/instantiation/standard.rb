@@ -7,7 +7,7 @@ module PBCore
     attribute :profile, as: :profile
 
     build_xml do |xml|
-      xml.instantiationStandard(value, xml_attributes_hash.compact)
+      xml.instantiationStandard(value, xml_attributes.compact)
     end
   end
 end

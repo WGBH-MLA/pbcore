@@ -5,7 +5,7 @@ module PBCore
     element :creatorRole, as: :value
 
     build_xml do |xml|
-      xml.creatorRole(value, xml_attributes_hash.compact)
+      xml.creatorRole(value, xml_attributes.compact)
     end
   end
 end

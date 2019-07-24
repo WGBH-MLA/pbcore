@@ -7,7 +7,7 @@ module PBCore
     attribute :descriptionTypeRef, as: :type_ref
 
     build_xml do |xml|
-      xml.pbcoreDescription(value, xml_attributes_hash.compact)
+      xml.pbcoreDescription(value, xml_attributes.compact)
     end
   end
 end
