@@ -24,4 +24,5 @@ module PBCore
   autoload :Extension,                'pbcore/extension'
   autoload :Instantiation,            'pbcore/instantiation'
   autoload :InstantiationDocument,    'pbcore/instantiation_document'
+  autoload :Vocab,                    'pbcore/vocab'
 end

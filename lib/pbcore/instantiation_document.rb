@@ -26,8 +26,7 @@ module PBCore
     autoload :Rights,               'pbcore/instantiation/rights'
     autoload :Annotation,           'pbcore/instantiation/annotation'
 
-    has_time_attributes_on :pbcoreInstantiationDocument
-
+    element :pbcoreInstantiationDocument, as: :value
     elements :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier
     elements :instantiationDate, as: :dates, class: PBCore::Instantiation::Date
     elements :instantiationDimensions, as: :dimensions, class: PBCore::Instantiation::Dimensions
@@ -47,13 +46,15 @@ module PBCore
     elements :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language
     element  :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes
     elements  :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
-    elements :instantiationExtensions, as: :extensions, class: PBCore::Instantiation::Extension
+    elements :instantiationExtension, as: :extensions, class: PBCore::Instantiation::Extension
     elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
     elements :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights
     elements :instantiationAnnotation, as: :annotations, class: PBCore::Instantiation::Annotation
 
+    include PBCore::Attributes::TimeInterval
+
     build_xml do |xml|
-      attrs = xml_attributes_hash.merge(namespace_attributes).compact
+      attrs = xml_attributes.merge(namespace_attributes).compact
       xml.pbcoreInstantiationDocument(attrs) do |xml|
         identifiers.each { |identifier| identifier.build(xml) }
         dates.each { |date| date.build(xml) }
@@ -87,9 +88,9 @@ module PBCore
       # TODO: Is there a better way to set namespace attributes?
       def namespace_attributes
         {
-          'xmlns' => "http://pbcore.org/PBCore/PBCoreNamespace.html",
+          'xmlns' => "http://www.pbcore.org/PBCore/PBCoreNamespace.html",
           'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
-          'xsi:schemaLocation' => "http://pbcore.org/PBCore/PBCoreNamespace.html https://raw.githubusercontent.com/WGBH/PBCore_2.1/master/pbcore-2.1.xsd"
+          'xsi:schemaLocation' => "http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd"
         }
       end
   end

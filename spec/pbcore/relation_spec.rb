@@ -1,20 +1,16 @@
 require 'spec_helper'
 
 RSpec.describe PBCore::Relation do
-  subject { described_class.new }
+  it_behaves_like "PBCore Element"
 
-  let(:xml) do
-    "<pbcoreRelation>
-       <pbcoreRelationType>Is Part Of</pbcoreRelationType>
-       <pbcoreRelationIdentifier>NOVA</pbcoreRelationIdentifier>
-     </pbcoreRelation>"
-  end
+  describe 'class configuration' do
+    subject { described_class }
+    it { is_expected.to have_sax_machine_top_level_element 'pbcoreRelationType',
+                                                           as: :type,
+                                                           class: PBCore::Relation::Type }
 
-  context 'after parsing PBCore XML' do
-    before { subject.parse(xml) }
-    it 'has parsed child elements' do
-      expect(subject).to have_parsed_xml_child_elements type: PBCore::Relation::Type,
-                                                        identifier: PBCore::Relation::Identifier
-    end
+    it { is_expected.to have_sax_machine_top_level_element 'pbcoreRelationIdentifier',
+                                                           as: :identifier,
+                                                           class: PBCore::Relation::Identifier }
   end
 end

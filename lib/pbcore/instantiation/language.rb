@@ -5,7 +5,7 @@ module PBCore
     element :instantiationLanguage, as: :value
 
     build_xml do |xml|
-      xml.instantiationLanguage(value, xml_attributes_hash.compact)
+      xml.instantiationLanguage(value, xml_attributes.compact)
     end
   end
 end

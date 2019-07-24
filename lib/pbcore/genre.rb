@@ -5,7 +5,7 @@ module PBCore
     element :pbcoreGenre, as: :value
 
     build_xml do |xml|
-      xml.pbcoreGenre(value, xml_attributes_hash.compact)
+      xml.pbcoreGenre(value, xml_attributes.compact)
     end
   end
 end

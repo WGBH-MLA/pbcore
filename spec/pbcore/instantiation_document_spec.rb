@@ -2,44 +2,40 @@ require 'spec_helper'
 require 'equivalent-xml'
 
 RSpec.describe PBCore::InstantiationDocument do
-  let(:subject) { described_class.new }
-  let(:xml) { fixture('instantiation_document.xml').read }
+  it_behaves_like 'PBCore Element'
 
-  context 'after parsing PBCore XML' do
-    before { subject.parse(xml) }
+  describe 'class configuration' do
+    subject { described_class }
+    # Attributes
+    it { is_expected.to have_sax_machine_attribute :startTime, as: :start_time }
+    it { is_expected.to have_sax_machine_attribute :startTime, as: :end_time }
+    it { is_expected.to have_sax_machine_attribute :startTime, as: :time_annotation }
 
-    it 'has time attributes' do
-      expect(subject).to have_parsed_xml_attribute_values start_time: "00:11:22:33",
-                                                          end_time: "11:22:33:44",
-                                                          time_annotation: "fake times"
-    end
+    # Single child elements
+    it { is_expected.to have_sax_machine_top_level_element :instantiationPhysical, as: :physical, class: PBCore::Instantiation::Physical }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationDigital, as: :digital, class: PBCore::Instantiation::Digital }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationStandard, as: :standard, class: PBCore::Instantiation::Standard }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationLocation, as: :location, class: PBCore::Instantiation::Location }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationMediaType, as: :media_type, class: PBCore::Instantiation::MediaType }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationFileSize, as: :file_size, class: PBCore::Instantiation::FileSize }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationDuration, as: :duration, class: PBCore::Instantiation::Duration }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationDataRate, as: :data_rate, class: PBCore::Instantiation::DataRate }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationColors, as: :colors, class: PBCore::Instantiation::Colors }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationTracks, as: :tracks, class: PBCore::Instantiation::Tracks }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationChannelConfiguration, as: :channel_configuration, class: PBCore::Instantiation::ChannelConfiguration }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes }
 
-    it 'has child elements' do
-      expect(subject).to have_parsed_xml_child_elements identifiers: PBCore::Instantiation::Identifier,
-                                                        dates: PBCore::Instantiation::Date,
-                                                        dimensions: PBCore::Instantiation::Dimensions,
-                                                        physical: PBCore::Instantiation::Physical,
-                                                        digital: PBCore::Instantiation::Digital,
-                                                        standard: PBCore::Instantiation::Standard,
-                                                        location: PBCore::Instantiation::Location,
-                                                        media_type: PBCore::Instantiation::MediaType,
-                                                        alternative_modes: PBCore::Instantiation::AlternativeModes,
-                                                        channel_configuration: PBCore::Instantiation::ChannelConfiguration,
-                                                        colors: PBCore::Instantiation::Colors,
-                                                        data_rate: PBCore::Instantiation::DataRate,
-                                                        essence_tracks: PBCore::Instantiation::EssenceTrack,
-                                                        file_size: PBCore::Instantiation::FileSize,
-                                                        languages: PBCore::Instantiation::Language,
-                                                        relations: PBCore::Instantiation::Relation,
-                                                        rights: PBCore::Instantiation::Rights,
-                                                        time_starts: PBCore::Instantiation::TimeStart,
-                                                        tracks: PBCore::Instantiation::Tracks
-    end
-
-    describe '.to_xml' do
-      it 'outputs the XML equivalent to what was parsed' do
-        expect(subject.to_xml).to be_equivalent_to xml
-      end
-    end
+    # Multiple child elements
+    it { is_expected.to have_sax_machine_collection_element :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier }
+    it { is_expected.to have_sax_machine_collection_element :instantiationDate, as: :dates, class: PBCore::Instantiation::Date }
+    it { is_expected.to have_sax_machine_collection_element :instantiationDimensions, as: :dimensions, class: PBCore::Instantiation::Dimensions }
+    it { is_expected.to have_sax_machine_collection_element :instantiationGenerations, as: :generations, class: PBCore::Instantiation::Generations }
+    it { is_expected.to have_sax_machine_collection_element :instantiationTimeStart, as: :time_starts, class: PBCore::Instantiation::TimeStart }
+    it { is_expected.to have_sax_machine_collection_element :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language }
+    it { is_expected.to have_sax_machine_collection_element :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack }
+    it { is_expected.to have_sax_machine_collection_element :instantiationExtension, as: :extensions, class: PBCore::Instantiation::Extension }
+    it { is_expected.to have_sax_machine_collection_element :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation }
+    it { is_expected.to have_sax_machine_collection_element :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights }
+    it { is_expected.to have_sax_machine_collection_element :instantiationAnnotation, as: :annotations, class: PBCore::Instantiation::Annotation }
   end
 end

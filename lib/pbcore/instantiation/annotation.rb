@@ -6,7 +6,7 @@ module PBCore
     attribute :annotationType, as: :type
 
     build_xml do |xml|
-      xml.instantiationAnnotation(value, xml_attributes_hash.compact)
+      xml.instantiationAnnotation(value, xml_attributes.compact)
     end
   end
 end

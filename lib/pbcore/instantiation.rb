@@ -26,6 +26,7 @@ module PBCore
     autoload :Rights,               'pbcore/instantiation/rights'
     autoload :Annotation,           'pbcore/instantiation/annotation'
 
+    element :pbcoreInstantiation, as: :value
     elements :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier
     elements :instantiationDate, as: :dates, class: PBCore::Instantiation::Date
     elements :instantiationDimensions, as: :dimensions, class: PBCore::Instantiation::Dimensions
@@ -45,13 +46,15 @@ module PBCore
     elements :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language
     element  :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes
     elements :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack
-    elements :instantiationExtensions, as: :extensions, class: PBCore::Instantiation::Extension
+    elements :instantiationExtension, as: :extensions, class: PBCore::Instantiation::Extension
     elements :instantiationRelation, as: :relations, class: PBCore::Instantiation::Relation
     elements :instantiationRights, as: :rights, class: PBCore::Instantiation::Rights
     elements :instantiationAnnotation, as: :annotations, class: PBCore::Instantiation::Annotation
 
+    include PBCore::Attributes::TimeInterval
+
     build_xml do |xml|
-      xml.pbcoreInstantiation(xml_attributes_hash.compact) do |xml|
+      xml.pbcoreInstantiation(xml_attributes.compact) do |xml|
         identifiers.each { |identifier| identifier.build(xml) }
         dates.each { |date| date.build(xml) }
         dimensions.each { |dimensions_element| dimensions_element.build(xml) }
@@ -61,8 +64,8 @@ module PBCore
         location.build(xml) if location
         media_type.build(xml) if media_type
         generations.each { |generations_element| generations_element.build(xml) }
-        time_starts.each { |time_start| time_start.build(xml) }
         file_size.build(xml) if file_size
+        time_starts.each { |time_start| time_start.build(xml) }
         duration.build(xml) if duration
         data_rate.build(xml) if data_rate
         colors.build(xml) if colors
@@ -70,9 +73,14 @@ module PBCore
         channel_configuration.build(xml) if channel_configuration
         languages.each { |language| language.build(xml) }
         alternative_modes.build(xml) if alternative_modes
-        annotations.each { |annotation| annotation.build(xml) }
-        extensions.each { |extension| extension.build(xml) }
         essence_tracks.each { |essence_track| essence_track.build(xml) }
+        # TODO: no instrelation?!!
+
+        # ??? this seems to render correctly according to pbcore.org, but doesnt pass schema validation
+        rights.each { |right| right.build(xml) }
+        annotations.each { |annotation| annotation.build(xml) }
+        # TODO: no instpart?!?
+        extensions.each { |extension| extension.build(xml) }
       end
     end
   end

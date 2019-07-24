@@ -5,7 +5,7 @@ module PBCore
     element :instantiationLocation, as: :value
 
     build_xml do |xml|
-      xml.instantiationLocation(value, xml_attributes_hash.compact)
+      xml.instantiationLocation(value, xml_attributes.compact)
     end
   end
 end

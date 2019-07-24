@@ -3,7 +3,7 @@ module PBCore
     element :essenceTrackDuration, as: :value
 
     build_xml do |xml|
-      xml.essenceTrackDuration(value, xml_attributes_hash.compact)
+      xml.essenceTrackDuration(value, xml_attributes.compact)
     end
   end
 end

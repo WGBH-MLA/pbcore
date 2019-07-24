@@ -5,7 +5,7 @@ module PBCore
     element :coverageType, as: :value
 
     build_xml do |xml|
-      xml.coverageType(value, xml_attributes_hash.compact)
+      xml.coverageType(value, xml_attributes.compact)
     end
   end
 end

@@ -1,21 +1,11 @@
 require 'spec_helper'
 
 RSpec.describe PBCore::Instantiation::EssenceTrack::BitDepth do
-  subject { described_class.new }
-  let(:xml) do
-    '<essenceTrackBitDepth unitsOfMeasure="foo" annotation="color">10</essenceTrackBitDepth>'
-  end
+  it_behaves_like 'PBCore Element'
 
-  context 'after parsing PBCore XML' do
-    before { subject.parse(xml) }
-
-    it 'has attribute values' do
-      expect(subject).to have_parsed_xml_attribute_values units_of_measure: "foo",
-                                                          annotation: "color"
-    end
-
-    it 'has a value' do
-      expect(subject).to have_parsed_xml_value "10"
-    end
+  describe 'class configuration' do
+    subject { described_class }
+    it { is_expected.to have_sax_machine_attribute :unitsOfMeasure, as: :units_of_measure}
+    it { is_expected.to have_a_value }
   end
 end

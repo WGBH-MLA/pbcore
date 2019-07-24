@@ -5,7 +5,7 @@ module PBCore
     element :instantiationGenerations, as: :value
 
     build_xml do |xml|
-      xml.instantiationGenerations(value, xml_attributes_hash.compact)
+      xml.instantiationGenerations(value, xml_attributes.compact)
     end
   end
 end

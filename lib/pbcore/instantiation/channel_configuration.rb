@@ -5,7 +5,7 @@ module PBCore
     element :instantiationChannelConfiguration, as: :value
 
     build_xml do |xml|
-      xml.instantiationChannelConfiguration(value, xml_attributes_hash.compact)
+      xml.instantiationChannelConfiguration(value, xml_attributes.compact)
     end
   end
 end

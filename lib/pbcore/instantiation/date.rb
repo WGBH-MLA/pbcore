@@ -7,7 +7,7 @@ module PBCore
     attribute :dateType, as: :type
 
     build_xml do |xml|
-      xml.instantiationDate(value, xml_attributes_hash.compact)
+      xml.instantiationDate(value, xml_attributes.compact)
     end
   end
 end

@@ -3,7 +3,7 @@ module PBCore
     element :essenceTrackTimeStart, as: :value
 
     build_xml do |xml|
-      xml.essenceTrackTimeStart(value, xml_attributes_hash.compact)
+      xml.essenceTrackTimeStart(value, xml_attributes.compact)
     end
   end
 end

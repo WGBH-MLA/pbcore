@@ -1,12 +1,13 @@
+require_relative '../../spec/support/fake_version_helper'
+
 FactoryBot.define do
   factory :pbcore_element, class: PBCore::Element do
     skip_create
 
-    # TODO: Add some variability to these values? Use Faker?
-    source { "value of source attribute" }
-    ref { "value of ref attribute" }
-    annotation { "value of annotation attribute" }
-    version { "value of version attribute" }
+    source { Faker::Internet.url }
+    ref { Faker::Internet.url }
+    annotation { Faker::Company.bs }
+    version { FakeVersionHelper.fake_version }
 
     initialize_with { new(attributes) }
   end

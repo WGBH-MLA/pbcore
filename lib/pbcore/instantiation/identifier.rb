@@ -5,7 +5,7 @@ module PBCore
     element :instantiationIdentifier, as: :value
 
     build_xml do |xml|
-      xml.instantiationIdentifier(value, xml_attributes_hash.compact)
+      xml.instantiationIdentifier(value, xml_attributes.compact)
     end
   end
 end

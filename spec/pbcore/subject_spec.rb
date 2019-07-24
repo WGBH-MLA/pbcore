@@ -1,22 +1,16 @@
 require 'spec_helper'
 
 RSpec.describe PBCore::Subject do
-  subject { described_class.new }
-  let(:xml) do
-    '<pbcoreSubject subjectType="entity" source="Library of Congress Name Authority">
-       Smith, John, 1580-1631
-     </pbcoreSubject>'
-  end
+  it_behaves_like 'PBCore Element'
 
-  context 'after parsing PBCore XML' do
-    before { subject.parse(xml) }
-    it 'has attribute values' do
-      expect(subject).to have_parsed_xml_attribute_values type: "entity",
-                                                          source: "Library of Congress Name Authority"
-    end
+  describe 'class configuration' do
+    subject { described_class }
 
-    it 'has a value' do
-      expect(subject).to have_parsed_xml_value "Smith, John, 1580-1631"
-    end
+    it { is_expected.to have_sax_machine_attribute 'titleType', as: :type }
+    it { is_expected.to have_sax_machine_attribute 'titleTypeSource', as: :type_source }
+    it { is_expected.to have_sax_machine_attribute 'titleTypeRef', as: :type_ref }
+    it { is_expected.to have_sax_machine_attribute 'titleTypeAnnotation', as: :type_annotation }
+    # has value, no child elements
+    it { is_expected.to have_sax_machine_value_element }
   end
 end
