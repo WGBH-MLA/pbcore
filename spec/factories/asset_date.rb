@@ -1,5 +1,4 @@
 require 'pbcore'
-require_relative '../../support/date_time_helpers'
 
 FactoryBot.define do
   factory :pbcore_asset_date, class: PBCore::AssetDate, parent: :pbcore_element do
