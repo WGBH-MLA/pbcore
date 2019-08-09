@@ -4,7 +4,7 @@ module PBCore
   class Contributor < Element
     autoload :Contributor,      'pbcore/contributor/contributor'
     autoload :Role,             'pbcore/contributor/role'
-
+    
     element :contributor, as: :contributor, class: PBCore::Contributor::Contributor
     element :contributorRole, as: :role, class: PBCore::Contributor::Role
 

@@ -87,9 +87,9 @@ module PBCore
       # TODO: Is there a better way to set namespace attributes?
       def namespace_attributes
         {
-          'xmlns' => "http://pbcore.org/PBCore/PBCoreNamespace.html",
+          'xmlns' => "http://www.pbcore.org/PBCore/PBCoreNamespace.html",
           'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
-          'xsi:schemaLocation' => "http://pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd"
+          'xsi:schemaLocation' => "http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd"
         }
       end
   end

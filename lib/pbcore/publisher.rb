@@ -4,6 +4,8 @@ module PBCore
   class Publisher < Element
     autoload :Publisher,      'pbcore/publisher/publisher'
     autoload :Role,             'pbcore/publisher/role'
+    
+    attribute :affiliation, as: :affiliation
 
     element :publisher, as: :publisher, class: PBCore::Publisher::Publisher
     element :publisherRole, as: :role, class: PBCore::Publisher::Role

@@ -1,12 +1,12 @@
-require 'pbcore/element'
+    require 'pbcore/element'
 
 module PBCore
   class DescriptionDocument < Element
     elements :pbcoreIdentifier, as: :identifiers, class: PBCore::Identifier
     elements :pbcoreTitle, as: :titles, class: PBCore::Title
     elements :pbcoreDescription, as: :descriptions, class: PBCore::Description
-    elements :pbcoreAssetType, as: :asset_types, class: PBCore::AssetType
     elements :pbcoreAssetDate, as: :asset_dates, class: PBCore::AssetDate
+    elements :pbcoreAssetType, as: :asset_types, class: PBCore::AssetType
     elements :pbcoreSubject, as: :subjects, class: PBCore::Subject
     elements :pbcoreGenre, as: :genres, class: PBCore::Genre
     elements :pbcoreRelation, as: :relations, class: PBCore::Relation
@@ -23,12 +23,12 @@ module PBCore
 
     build_xml do |xml|
       xml.pbcoreDescriptionDocument(namespace_attributes) do |xml|
-        identifiers.each { |identifier| identifier.build(xml) }
-        titles.each { |title| title.build(xml) }
-        descriptions.each { |description| description.build(xml) }
         asset_types.each { |asset_type| asset_type.build(xml) }
         asset_dates.each { |asset_date| asset_date.build(xml) }
+        identifiers.each { |identifier| identifier.build(xml) }
+        titles.each { |title| title.build(xml) }
         subjects.each { |subject| subject.build(xml) }
+        descriptions.each { |description| description.build(xml) }
         genres.each { |genre| genre.build(xml) }
         relations.each { |relation| relation.build(xml) }
         coverages.each { |coverage| coverage.build(xml) }
@@ -38,9 +38,10 @@ module PBCore
         contributors.each { |contributor| contributor.build(xml) }
         publishers.each { |publisher| publisher.build(xml) }
         rights_summaries.each { |rights_summary| rights_summary.build(xml) }
-        annotations.each { |annotation| annotation.build(xml) }
-        extensions.each { |extension| extension.build(xml) }
         instantiations.each { |instantiation| instantiation.build(xml) }
+        annotations.each { |annotation| annotation.build(xml) }
+        # TODO: no pbcore part?!
+        extensions.each { |extension| extension.build(xml) }
       end
     end
 
@@ -49,9 +50,10 @@ module PBCore
     # TODO: Is there a better way to set namespace attributes?
     def namespace_attributes
       {
-        'xmlns' => "http://pbcore.org/PBCore/PBCoreNamespace.html",
+        # changed to www.pbcore because aapb doesnt like it without
+        'xmlns' => "http://www.pbcore.org/PBCore/PBCoreNamespace.html",
         'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
-        'xsi:schemaLocation' => "http://pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd"
+        'xsi:schemaLocation' => "http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd"
       }
     end
   end

@@ -46,11 +46,12 @@ module PBCore
         sampling_rate.build(xml) if sampling_rate
         bit_depth.build(xml) if bit_depth
         frame_size.build(xml) if frame_size
-        duration.build(xml) if duration
         aspect_ratio.build(xml) if aspect_ratio
         time_start.build(xml) if time_start
+        duration.build(xml) if duration
         languages.each { |language| language.build(xml) }
         annotations.each { |annotation| annotation.build(xml) }
+        # TODO: no essen extension!?!
       end
     end
   end

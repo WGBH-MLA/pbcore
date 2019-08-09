@@ -61,8 +61,8 @@ module PBCore
         location.build(xml) if location
         media_type.build(xml) if media_type
         generations.each { |generations_element| generations_element.build(xml) }
-        time_starts.each { |time_start| time_start.build(xml) }
         file_size.build(xml) if file_size
+        time_starts.each { |time_start| time_start.build(xml) }
         duration.build(xml) if duration
         data_rate.build(xml) if data_rate
         colors.build(xml) if colors
@@ -70,9 +70,12 @@ module PBCore
         channel_configuration.build(xml) if channel_configuration
         languages.each { |language| language.build(xml) }
         alternative_modes.build(xml) if alternative_modes
-        annotations.each { |annotation| annotation.build(xml) }
-        extensions.each { |extension| extension.build(xml) }
         essence_tracks.each { |essence_track| essence_track.build(xml) }
+        # TODO: no instrelation?!!
+        # TODO: no instrights?!!
+        annotations.each { |annotation| annotation.build(xml) }
+        # TODO: no instpart?!?
+        extensions.each { |extension| extension.build(xml) }
       end
     end
   end
