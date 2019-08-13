@@ -1,4 +1,6 @@
 require 'pbcore'
+require 'securerandom'
+ID_PREFIX = "cpb-aacip-"
 
 FactoryBot.define do
   factory :pbcore_identifier, class: PBCore::Identifier, parent: :pbcore_element do
@@ -7,7 +9,7 @@ FactoryBot.define do
     trait :aapb do
       source { "http://americanarchiveinventory.org" }
       # Generates a random AAPB ID
-      value { AMS::IdentifierService.mint }
+      value { ID_PREFIX + SecureRandom.uuid.tr('-', '').slice(0, 11) }
     end
 
     trait :nola_code do

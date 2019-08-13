@@ -72,7 +72,9 @@ module PBCore
         alternative_modes.build(xml) if alternative_modes
         essence_tracks.each { |essence_track| essence_track.build(xml) }
         # TODO: no instrelation?!!
-        # TODO: no instrights?!!
+        
+        # ??? this seems to render correctly according to pbcore.org, but doesnt pass schema validation
+        # rights.each { |right| right.build(xml) }
         annotations.each { |annotation| annotation.build(xml) }
         # TODO: no instpart?!?
         extensions.each { |extension| extension.build(xml) }

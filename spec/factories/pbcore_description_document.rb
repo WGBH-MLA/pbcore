@@ -11,7 +11,15 @@ FactoryBot.define do
       audience_levels   { build_list(:pbcore_audience_level, rand(1..3)) }
       audience_ratings  { build_list(:pbcore_audience_rating, rand(1..3)) }
       asset_types       { build_list(:pbcore_asset_type, rand(1..3)) }
-      annotations       { build_list(:pbcore_annotation, rand(1..3)) }
+      
+      annotations do
+        [
+          build(:pbcore_annotation, type: 'organization', value: 'American Archive of Public Broadcasting'),
+          build(:pbcore_annotation, type: 'organization', value: 'bark bark'),
+          build(:pbcore_annotation, type: 'organization', value: 'meow meow'),
+        ]
+      end
+
       subjects          { build_list(:pbcore_subject, rand(1..3)) }
 
       titles do
