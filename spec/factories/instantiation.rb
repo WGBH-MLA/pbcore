@@ -35,7 +35,23 @@ FactoryBot.define do
     end
 
     trait :aapb_holding do
-      annotations { [ build(:pbcore_instantiation_annotation, type: "Organization", value: "American Archive of Public Broadcasting") ] }
+      annotations { [ build(:pbcore_instantiation_annotation, type: "organization", value: "American Archive of Public Broadcasting") ] }
+    end
+
+    trait :kqed_org do
+      annotations {
+        [
+          build(:pbcore_instantiation_annotation, type: 'organization', value: 'KQED'),
+        ] 
+      }
+    end
+    
+    trait :wgbh_org do
+      annotations {
+        [
+          build(:pbcore_instantiation_annotation, type: 'organization', value: 'WGBH'),
+        ] 
+      }
     end
   end
 end

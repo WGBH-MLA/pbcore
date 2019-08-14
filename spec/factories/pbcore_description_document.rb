@@ -25,6 +25,7 @@ FactoryBot.define do
       titles do
         [
           build_list(:pbcore_title, rand(1..3)),
+          build_list(:pbcore_title, rand(1..3), type: 'Series'),
           build_list(:pbcore_title, rand(1..3), type: 'Program'),
           build_list(:pbcore_title, rand(1..3), type: 'Episode'),
           build_list(:pbcore_title, rand(1..3), type: 'Segment'),
@@ -85,7 +86,7 @@ FactoryBot.define do
 
       instantiations do
         [
-          build(:pbcore_instantiation, :digital, :aapb_holding)
+          build(:pbcore_instantiation, :digital, :aapb_holding),
         ]
       end
 
@@ -101,16 +102,37 @@ FactoryBot.define do
       end
     end
 
+    trait :kqed_org do
+      instantiations do
+        [
+          build(:pbcore_instantiation,
+            annotations: [
+              build(:pbcore_instantiation, :digital, :kqed_org)
+            ]
+          )
+        ]
+      end
+    end
+
+    trait :wgbh_org do
+      instantiations do
+        [
+          build(:pbcore_instantiation,
+            annotations: [
+              build(:pbcore_instantiation, :digital, :wgbh_org)
+            ]
+          )
+        ]
+      end
+    end
 
 
     # ITS THE NEWWWW
     trait :access_level_protected do
-      identifiers { [build(:pbcore_identifier, :sony_ci_video)] }
       annotations { [build(:pbcore_annotation, :level_of_user_access, :on_location)] }
     end 
 
     trait :access_level_public do
-      identifiers { [build(:pbcore_identifier, :sony_ci_video)] }
       annotations { [build(:pbcore_annotation, :level_of_user_access, :online_reading_room)] }
     end 
 
@@ -125,6 +147,10 @@ FactoryBot.define do
 
     trait :clean_multiple_orgs do
       instantiations { build_list(:pbcore_instantiation, :organization) }
+    end
+
+    trait :outside_url do
+      annotations { [ build(:pbcore_annotation, :outside_url) ] }
     end
 
 

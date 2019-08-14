@@ -21,6 +21,11 @@ FactoryBot.define do
       value { Faker::TvShows::StarTrek }
     end
 
+    trait :outside_url do
+      type { 'Outside URL' }
+      value { 'http://www.wgbh.org/' }
+    end
+
     initialize_with { new(attributes) }
   end
 end
