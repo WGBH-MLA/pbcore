@@ -26,6 +26,14 @@ FactoryBot.define do
       digital   { build(:pbcore_instantiation_digital) }
     end
 
+    trait :moving_image do
+      media_type { build(:pbcore_instantiation_media_type, value: 'Moving Image') }
+    end
+
+    trait :audio do
+      media_type { build(:pbcore_instantiation_media_type, value: 'Audio') }
+    end
+
     trait :physical do
       physical { build(:pbcore_instantiation_physical) }
     end
@@ -50,6 +58,14 @@ FactoryBot.define do
       annotations {
         [
           build(:pbcore_instantiation_annotation, type: 'organization', value: 'WGBH'),
+        ] 
+      }
+    end
+
+    trait :iowa_org do
+      annotations {
+        [
+          build(:pbcore_instantiation_annotation, type: 'organization', value: 'Iowa Public Television'),
         ] 
       }
     end

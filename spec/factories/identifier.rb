@@ -12,6 +12,11 @@ FactoryBot.define do
       value { ID_PREFIX + SecureRandom.uuid.tr('-', '').slice(0, 11) }
     end
 
+    trait :collection_aapb do
+      source { 'http://americanarchiveinventory.org' }
+      value { 'cpb-aacip_111-21ghx7d6' }
+    end
+
     trait :nola_code do
       source { "NOLA" }
       # 4 capital letters followed by number with leading zeros.
