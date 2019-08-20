@@ -90,11 +90,11 @@ FactoryBot.define do
         ]
       end
 
-      instantiations do
-        [
-          build(:pbcore_instantiation, :digital, :aapb_holding, :moving_image),
-        ]
-      end
+      # instantiations do
+      #   [
+      #     build(:pbcore_instantiation, :digital, :aapb_holding, :moving_image),
+      #   ]
+      # end
 
       transient do
         other_identifiers { [:nola_code, :eidr, :local] }
@@ -132,7 +132,7 @@ FactoryBot.define do
         pbcore_description_document.instantiations << build(:pbcore_instantiation, :wgbh_org) if evaluator.wgbh_org 
         pbcore_description_document.instantiations << build(:pbcore_instantiation, :iowa_org) if evaluator.iowa_org 
 
-        pbcore_description_document.instantiations << build(:pbcore_instantiation, :audio) if evaluator.audio
+        pbcore_description_document.instantiations << build(:pbcore_instantiation, :moving_image) if evaluator.moving_image
         pbcore_description_document.instantiations << build(:pbcore_instantiation, :audio) if evaluator.audio
 
         pbcore_description_document.annotations << build(:pbcore_annotation, :has_transcript_url) if evaluator.has_transcript
