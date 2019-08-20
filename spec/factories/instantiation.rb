@@ -31,7 +31,7 @@ FactoryBot.define do
     end
 
     trait :audio do
-      media_type { build(:pbcore_instantiation_media_type, value: 'Audio') }
+      media_type { build(:pbcore_instantiation_media_type, value: 'Sound') }
     end
 
     trait :physical do
