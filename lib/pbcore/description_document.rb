@@ -1,4 +1,4 @@
-    require 'pbcore/element'
+require 'pbcore/element'
 
 module PBCore
   class DescriptionDocument < Element

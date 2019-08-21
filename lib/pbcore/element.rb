@@ -1,5 +1,9 @@
 require 'sax-machine'
 
+module SAXMachine::SAXAbstractHandler
+  NO_BUFFER = nil
+end
+
 module PBCore
   # TODO: decouple XML building behavior from schema-related declarations.
   class Element

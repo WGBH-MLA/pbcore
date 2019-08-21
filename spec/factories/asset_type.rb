@@ -7,10 +7,11 @@ FactoryBot.define do
     # this seems to yield :no_buffer as the value sometimes, changing
     # value { ['Program', 'Story', 'Moving image', 'Sound'].sample }
     value { 'Program' }
+    
+    # trait :program do
+    #   value { 'Program' }
+    # end
+    
     initialize_with { new(attributes) }
-
-    trait :program do
-      value { 'Program' }
-    end
   end
 end
