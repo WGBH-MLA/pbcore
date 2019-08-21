@@ -1,7 +1,7 @@
 require 'sax-machine'
 
 module SAXMachine::SAXAbstractHandler
-  NO_BUFFER = nil
+  NO_BUFFER = ''
 end
 
 module PBCore
