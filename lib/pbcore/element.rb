@@ -1,9 +1,5 @@
 require 'sax-machine'
 
-module SAXMachine::SAXAbstractHandler
-  NO_BUFFER = ''
-end
-
 module PBCore
   # TODO: decouple XML building behavior from schema-related declarations.
   class Element
@@ -12,7 +8,10 @@ module PBCore
 
     # Defines which accessor is used to get the value within an element.
     # Here we defined it be simply :value.
-    value :value
+
+    value(:value, {}) do |val|
+      val == :no_buffer ? nil : val
+    end
 
     # Defind attributes common to all PBCore elements.
     attribute :source
