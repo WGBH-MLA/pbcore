@@ -8,7 +8,6 @@ module PBCore
 
     # Defines which accessor is used to get the value within an element.
     # Here we defined it be simply :value.
-
     value(:value, {}) do |val|
       val == :no_buffer ? nil : val
     end
