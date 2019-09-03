@@ -6,7 +6,7 @@ FactoryBot.define do
     skip_create
 
     # was adding newlines and extra spaces to titles... no thank you!
-    value { "#{Faker::Book.title} #{Faker::JapaneseMedia::DragonBall.character}".gsub(/[\s\n]+/, ' ') }
+    value { "#{Faker::Book.title} #{Faker::JapaneseMedia::DragonBall.character}" }
     trait :alternative_title do
       value { 'This Title is Alternative' }
       type { 'Alternative' }
