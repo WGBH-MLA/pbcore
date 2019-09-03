@@ -45,12 +45,12 @@ FactoryBot.define do
       descriptions do
         [
           build_list(:pbcore_description, rand(1..3)),
-          build_list(:pbcore_description, rand(1..3), type: 'Program'),
-          build_list(:pbcore_description, rand(1..3), type: 'Episode'),
-          build_list(:pbcore_description, rand(1..3), type: 'Segment'),
-          build_list(:pbcore_description, rand(1..3), type: 'Promo'),
-          build_list(:pbcore_description, rand(1..3), type: 'Clip'),
-          build_list(:pbcore_description, rand(1..3), type: 'Raw Footage'),
+          build(:pbcore_description, type: 'Program'),
+          build(:pbcore_description, type: 'Episode'),
+          build(:pbcore_description, type: 'Segment'),
+          build(:pbcore_description, type: 'Promo'),
+          build(:pbcore_description, type: 'Clip'),
+          build(:pbcore_description, type: 'Raw Footage'),
         ].flatten
       end
 
