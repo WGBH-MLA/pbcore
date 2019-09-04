@@ -40,5 +40,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sax-machine'
   spec.add_dependency 'nokogiri'
   spec.add_dependency 'factory_bot', '~> 4.11.1'
-  spec.add_dependency 'faker', '~> 1.9.6'
+  spec.add_dependency 'faker', '~> 1.9.3'
 end
