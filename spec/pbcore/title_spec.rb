@@ -2,8 +2,20 @@ require 'spec_helper'
 
 RSpec.describe PBCore::Title do
   subject { described_class.new }
-  let(:attributes) { attributes_for :pbcore_title }
-  let(:value) { "test title" }
+
+  let(:value) { 'fake title' }
+  let(:attributes) do
+    {
+      source: 'fake-source',
+      ref: 'fake-ref',
+      annotation: 'fake-annotation',
+      version: 'fake-version',
+      type: 'Series',
+      type_source: 'fake-type-source',
+      type_ref: 'fake-type-ref',
+      type_annotation: 'fake-type-anno'
+    }
+  end
   let(:xml) do
     "<pbcoreTitle source='#{attributes[:source]}'
                   ref='#{attributes[:ref]}'
