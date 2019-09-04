@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<pbcoreDescriptionDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" startTime="00:11:22:33" endTime="11:22:33:44" timeAnnotation="fake times" xsi:schemaLocation="http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd">
+<pbcoreInstantiationDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" startTime="00:11:22:33" endTime="11:22:33:44" timeAnnotation="fake times" xsi:schemaLocation="http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd">
     <pbcoreAssetType source="pbcoreAssetType" ref="http://metadataregistry.org/concept/show/id/1627.html">Story</pbcoreAssetType>
     <pbcoreAssetDate>2001-02-03T09:30:01</pbcoreAssetDate>
     <pbcoreIdentifier source="NOLA Code">NOVA003406</pbcoreIdentifier>
