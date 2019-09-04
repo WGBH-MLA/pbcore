@@ -1,46 +1,46 @@
 <?xml version="1.0"?>
-<pbcoreInstantiationDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" startTime="00:11:22:33" endTime="11:22:33:44" timeAnnotation="fake times" xsi:schemaLocation="http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd">
-    <pbcoreAssetType source="pbcoreAssetType" ref="http://metadataregistry.org/concept/show/id/1627.html">Story</pbcoreAssetType>
-    <pbcoreAssetDate>2001-02-03T09:30:01</pbcoreAssetDate>
-    <pbcoreIdentifier source="NOLA Code">NOVA003406</pbcoreIdentifier>
-    <pbcoreIdentifier source="blerg">Foo123</pbcoreIdentifier>
-    <pbcoreTitle titleType="Full">American Experience: Radio Bikini</pbcoreTitle>
-    <pbcoreSubject subjectType="entity" source="Library of Congress Name Authority">Smith, John, 1580-1631</pbcoreSubject>
-    <pbcoreDescription>In July 1946, the U.S. Navy staged "Operation Crossroads"--two highly publicized atomic bomb tests at a Pacific Island called Bikini.  This film is the story of those tests and their effect not only on the thousands of Naval personnel and spectators who watched, but also on the Bikinians whose homes was rendered uninhabitable by contamination, even now, 40 years later.</pbcoreDescription>
-    
-    <pbcoreGenre source="PBCore pbcoreGenre" ref="http://metadataregistry.org/concept/show/id/2449.html">History</pbcoreGenre>
-    <pbcoreRelation>
-        <pbcoreRelationType>Is Part Of</pbcoreRelationType>
-        <pbcoreRelationIdentifier>NOVA</pbcoreRelationIdentifier>
-    </pbcoreRelation>
-    <pbcoreCoverage>
-        <coverage source="latitude, longitude">37.2000,-76.7667</coverage>
-        <coverageType source="PBCore coverageType" ref="http://pbcore.org/vocabularies/coverageType#spatial">Spatial</coverageType>
-    </pbcoreCoverage>
-    <pbcoreAudienceLevel source="PBS Teachers" annotation="for educational use">K-2</pbcoreAudienceLevel>
-    <pbcoreAudienceRating source="MPAA Movie Ratings">G</pbcoreAudienceRating>
-    <pbcoreCreator>
-        <creator>foo</creator>
-        <creatorRole>bar</creatorRole>
-    </pbcoreCreator>
-    <pbcoreContributor>
-        <contributor>Yo-Yo Ma</contributor>
-        <contributorRole source="PBCore contributorRole" ref="http://metadataregistry.org/conceptprop/list/concept_id/1330.html">Instrumentalist</contributorRole>
-    </pbcoreContributor>
-    <pbcorePublisher>
-        <publisher>Public Broadcasting Service</publisher>
-        <publisherRole>Distributor</publisherRole>
-    </pbcorePublisher>
-    <pbcoreRightsSummary>
+<pbcoreDescriptionDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd">
+  <pbcoreAssetType source="pbcoreAssetType" ref="http://metadataregistry.org/concept/show/id/1627.html">Story</pbcoreAssetType>
+  <pbcoreAssetDate>2001-02-03T09:30:01</pbcoreAssetDate>
+  <pbcoreIdentifier source="NOLA Code">NOVA003406</pbcoreIdentifier>
+  <pbcoreIdentifier source="blerg">Foo123</pbcoreIdentifier>
+  <pbcoreTitle titleType="Full">American Experience: Radio Bikini</pbcoreTitle>
+  <pbcoreSubject source="Library of Congress Name Authority" subjectType="entity">Smith, John, 1580-1631</pbcoreSubject>
+  <pbcoreDescription>In July 1946, the U.S. Navy staged "Operation Crossroads"--two highly publicized atomic bomb tests at a Pacific Island called Bikini.  This film is the story of those tests and their effect not only on the thousands of Naval personnel and spectators who watched, but also on the Bikinians whose homes was rendered uninhabitable by contamination, even now, 40 years later.</pbcoreDescription>
+  
+  <pbcoreGenre source="PBCore pbcoreGenre" ref="http://metadataregistry.org/concept/show/id/2449.html">History</pbcoreGenre>
+  <pbcoreRelation>
+    <pbcoreRelationType>Is Part Of</pbcoreRelationType>
+    <pbcoreRelationIdentifier>NOVA</pbcoreRelationIdentifier>
+  </pbcoreRelation>
+  <pbcoreCoverage>
+    <coverage source="latitude, longitude">37.2000,-76.7667</coverage>
+    <coverageType source="PBCore coverageType" ref="http://pbcore.org/vocabularies/coverageType#spatial">Spatial</coverageType>
+  </pbcoreCoverage>
+  <pbcoreAudienceLevel source="PBS Teachers" annotation="for educational use">K-2</pbcoreAudienceLevel>
+  <pbcoreAudienceRating source="MPAA Movie Ratings">G</pbcoreAudienceRating>
+  <pbcoreCreator>
+    <creator>foo</creator>
+    <creatorRole>bar</creatorRole>
+  </pbcoreCreator>
+  <pbcoreContributor>
+    <contributor>Yo-Yo Ma</contributor>
+    <contributorRole source="PBCore contributorRole" ref="http://metadataregistry.org/conceptprop/list/concept_id/1330.html">Instrumentalist</contributorRole>
+  </pbcoreContributor>
+  <pbcorePublisher>
+    <publisher>Public Broadcasting Service</publisher>
+    <publisherRole>Distributor</publisherRole>
+  </pbcorePublisher>
+  <pbcoreRightsSummary>
     <rightsSummary source="Creative Commons" ref="http://creativecommons.org/licenses/by/3.0" version="3.0">CC BY 3.0</rightsSummary>
-        <rightsLink>www.rightsinfo.com</rightsLink>
-    </pbcoreRightsSummary>
-    <pbcoreAnnotation annotationType="foo">Voiceover replaced 20020302.</pbcoreAnnotation>
-    <pbcoreExtension>
-       <extensionWrap>
-         <extensionElement>RightsHolderName</extensionElement>
-         <extensionValue>WNET.org</extensionValue>
-         <extensionAuthorityUsed>http://www.loc.gov/standards/rights/METSRights.xsd</extensionAuthorityUsed>
-       </extensionWrap>
-     </pbcoreExtension>
+    <rightsLink>www.rightsinfo.com</rightsLink>
+  </pbcoreRightsSummary>
+  <pbcoreAnnotation annotationType="foo">Voiceover replaced 20020302.</pbcoreAnnotation>
+  <pbcoreExtension>
+    <extensionWrap>
+      <extensionElement>RightsHolderName</extensionElement>
+      <extensionValue>WNET.org</extensionValue>
+      <extensionAuthorityUsed>http://www.loc.gov/standards/rights/METSRights.xsd</extensionAuthorityUsed>
+    </extensionWrap>
+  </pbcoreExtension>
 </pbcoreDescriptionDocument>
