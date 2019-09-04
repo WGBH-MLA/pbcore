@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<pbcoreInstantiationDocument startTime="00:11:22:33" endTime="11:22:33:44" timeAnnotation="fake times" xmlns="http://pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pbcore.org/PBCore/PBCoreNamespace.html https://raw.githubusercontent.com/WGBH/PBCore_2.1/master/pbcore-2.1.xsd">
+       <pbcoreInstantiationDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" startTime="00:11:22:33" endTime="11:22:33:44" timeAnnotation="fake times" xsi:schemaLocation="http://www.pbcore.org/PBCore/PBCoreNamespace.html http://www.pbcore.org/xsd/pbcore-2.1.xsd">
     <instantiationIdentifier annotation="file name">news_20071211.mp3</instantiationIdentifier>
     <instantiationIdentifier source="WGBH BARCODE">0000313536</instantiationIdentifier>
     <instantiationDate dateType="Published">2007-07-02T18:10+02:24</instantiationDate>
