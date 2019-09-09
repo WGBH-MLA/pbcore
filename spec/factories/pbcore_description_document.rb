@@ -71,7 +71,6 @@ FactoryBot.define do
       rights_summaries do
         [
           build(:pbcore_rights_summary, :summary),
-          build(:pbcore_rights_summary, :link)
         ]
       end
 

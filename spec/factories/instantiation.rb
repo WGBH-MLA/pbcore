@@ -15,7 +15,7 @@ FactoryBot.define do
     time_starts             { [ build(:pbcore_instantiation_time_start) ] }
     duration                { build(:pbcore_instantiation_duration) }
     colors                  { build(:pbcore_instantiation_colors) }
-    rights                  { [ build(:pbcore_instantiation_rights) ] }
+    rights                  { [ build(:pbcore_instantiation_rights, :link) ] }
     tracks                  { build(:pbcore_instantiation_tracks) }
     channel_configuration   { build(:pbcore_instantiation_channel_configuration) }
     alternative_modes       { build(:pbcore_instantiation_alternative_modes) }
