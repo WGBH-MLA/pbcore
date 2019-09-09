@@ -12,8 +12,8 @@ module PBCore
 
     build_xml do |xml|
       xml.instantiationRights(xml_attributes_hash.compact) do |xml|
-        rights_summary.build(xml)
-        rights_link.build(xml)
+        rights_summary.build(xml) if rights_summary
+        rights_link.build(xml) if rights_link
       end
     end
   end
