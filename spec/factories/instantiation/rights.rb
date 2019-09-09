@@ -5,7 +5,7 @@ FactoryBot.define do
     skip_create
 
     rights_summary { PBCore::RightsSummary::RightsSummary.new(value: Faker::HitchhikersGuideToTheGalaxy.quote) }
-    rights_link { PBCore::RightsSummary::RightsLink.new(value: Faker::Internet.url) }
+    # rights_link { PBCore::RightsSummary::RightsLink.new(value: Faker::Internet.url) }
 
     initialize_with { new(attributes) }
   end
