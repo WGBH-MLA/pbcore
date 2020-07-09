@@ -5,7 +5,7 @@ module PBCore
     element :extensionValue, as: :value
 
     build_xml do |xml|
-      xml.extensionValue(value, xml_attributes_hash.compact)
+      xml.extensionValue(value, xml_attributes.compact)
     end
   end
 end

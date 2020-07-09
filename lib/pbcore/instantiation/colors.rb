@@ -5,7 +5,7 @@ module PBCore
     element :instantiationColors, as: :value
 
     build_xml do |xml|
-      xml.instantiationColors(value, xml_attributes_hash.compact)
+      xml.instantiationColors(value, xml_attributes.compact)
     end
   end
 end

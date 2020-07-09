@@ -5,7 +5,7 @@ module PBCore
     element :pbcoreAudienceLevel, as: :value
 
     build_xml do |xml|
-      xml.pbcoreAudienceLevel(value, xml_attributes_hash.compact)
+      xml.pbcoreAudienceLevel(value, xml_attributes.compact)
     end
   end
 end

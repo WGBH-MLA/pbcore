@@ -1,16 +1,10 @@
 require 'spec_helper'
 
 RSpec.describe PBCore::Publisher::Publisher do
-  subject { described_class.new }
+  it_behaves_like "PBCore Element"
 
-  let(:xml) do
-    '<publisher>Public Broadcasting Service</publisher>'
-  end
-
-  context 'after parsing PBCore XML' do
-    before { subject.parse(xml) }
-    it 'has parsed value' do
-      expect(subject).to have_parsed_xml_value "Public Broadcasting Service"
-    end
+  describe 'class configuration' do
+    subject { described_class }
+    it { is_expected.to have_sax_machine_value_element }
   end
 end

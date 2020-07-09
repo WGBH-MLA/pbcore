@@ -6,7 +6,7 @@ module PBCore
     attribute :affiliation, as: :affiliation
 
     build_xml do |xml|
-      xml.contributor(value, xml_attributes_hash.compact)
+      xml.contributor(value, xml_attributes.compact)
     end
   end
 end

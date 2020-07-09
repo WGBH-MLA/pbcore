@@ -1,22 +1,12 @@
 require 'spec_helper'
 
 RSpec.describe PBCore::Extension::Wrap do
-  subject { described_class.new }
+  it_behaves_like 'PBCore Element'
 
-  let(:xml) do
-    "<extensionWrap>
-       <extensionElement>RightsHolderName</extensionElement>
-       <extensionValue>WNET.org</extensionValue>
-       <extensionAuthorityUsed>http://www.loc.gov/standards/rights/METSRights.xsd</extensionAuthorityUsed>
-     </extensionWrap>"
-  end
-
-  context 'after parsing PBCore XML' do
-    before { subject.parse(xml) }
-    it 'has parsed child elements' do
-      expect(subject).to have_parsed_xml_child_elements element: PBCore::Extension::Wrap::Element,
-                                                        extension_value: PBCore::Extension::Wrap::Value,
-                                                        authority_used: PBCore::Extension::Wrap::AuthorityUsed
-    end
+  describe 'class configuration' do
+    subject { described_class }
+    it { is_expected.to have_sax_machine_top_level_element :extensionElement, as: :extension_element, class: PBCore::Extension::Wrap::Element }
+    it { is_expected.to have_sax_machine_top_level_element :extensionValue, as: :extension_value, class: PBCore::Extension::Wrap::Value }
+    it { is_expected.to have_sax_machine_top_level_element :extensionAuthorityUsed, as: :authority_used, class: PBCore::Extension::Wrap::AuthorityUsed }
   end
 end

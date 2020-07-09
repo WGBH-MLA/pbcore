@@ -3,7 +3,7 @@ module PBCore
     element :instantiationRelationType, as: :value
 
     build_xml do |xml|
-      xml.instantiationRelationType(value, xml_attributes_hash.compact)
+      xml.instantiationRelationType(value, xml_attributes.compact)
     end
   end
 end

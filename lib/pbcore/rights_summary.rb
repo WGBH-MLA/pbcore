@@ -3,16 +3,19 @@ require 'pbcore/element'
 module PBCore
   class RightsSummary < Element
 
-    autoload :RightsSummary,   'pbcore/rights_summary/rights_summary'
-    autoload :RightsLink,       'pbcore/rights_summary/rights_link'
+    autoload :Summary,   'pbcore/rights_summary/summary'
+    autoload :Link,      'pbcore/rights_summary/link'
 
-    element :rightsSummary, as: :rights_summary, class: PBCore::RightsSummary::RightsSummary
-    element :rightsLink, as: :rights_link, class: PBCore::RightsSummary::RightsLink
+    element :pbcoreRightsSummary, as: :value
+    element :rightsSummary, as: :summary, class: PBCore::RightsSummary::Summary
+    element :rightsLink, as: :link, class: PBCore::RightsSummary::Link
+
+    include PBCore::Attributes::TimeInterval
 
     build_xml do |xml|
-      xml.pbcoreRightsSummary(xml_attributes_hash.compact) do |xml|
-        rights_summary.build(xml) if rights_summary
-        rights_link.build(xml) if rights_link
+      xml.pbcoreRightsSummary(xml_attributes.compact) do |xml|
+        summary.build(xml) if summary
+        link.build(xml) if link
       end
     end
   end

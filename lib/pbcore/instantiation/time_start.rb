@@ -5,7 +5,7 @@ module PBCore
     element :instantiationTimeStart, as: :value
 
     build_xml do |xml|
-      xml.instantiationTimeStart(value, xml_attributes_hash.compact)
+      xml.instantiationTimeStart(value, xml_attributes.compact)
     end
   end
 end

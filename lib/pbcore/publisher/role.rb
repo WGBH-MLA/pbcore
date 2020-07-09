@@ -5,7 +5,7 @@ module PBCore
     element :publisherRole, as: :value
 
     build_xml do |xml|
-      xml.publisherRole(value, xml_attributes_hash.compact)
+      xml.publisherRole(value, xml_attributes.compact)
     end
   end
 end
