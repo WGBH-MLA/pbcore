@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Colors < Element
+  class Instantiation::Colors < ContentElement
     element :instantiationColors, as: :value
 
     build_xml do |xml|

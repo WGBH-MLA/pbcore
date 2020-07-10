@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::DataRate < Element
+  class Instantiation::DataRate < ContentElement
     element :instantiationDataRate, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

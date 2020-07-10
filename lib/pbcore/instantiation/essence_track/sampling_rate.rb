@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::SamplingRate < Element
+  class Instantiation::EssenceTrack::SamplingRate < ContentElement
     element :essenceTrackSamplingRate, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

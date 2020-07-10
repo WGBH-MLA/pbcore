@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Duration < Element
+  class Instantiation::Duration < ContentElement
     element :instantiationDuration, as: :value
 
     build_xml do |xml|

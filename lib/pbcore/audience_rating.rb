@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class AudienceRating < Element
+  class AudienceRating < ContentElement
     element :pbcoreAudienceRating, as: :value
 
     build_xml do |xml|

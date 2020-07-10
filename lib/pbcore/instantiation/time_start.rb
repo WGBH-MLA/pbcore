@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::TimeStart < Element
+  class Instantiation::TimeStart < ContentElement
     element :instantiationTimeStart, as: :value
 
     build_xml do |xml|

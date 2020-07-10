@@ -9,7 +9,6 @@ module PBCore
     element :rightsSummary, as: :summary, class: PBCore::Instantiation::Rights::Summary
     element :rightsLink, as: :link, class: PBCore::Instantiation::Rights::Link
 
-    # has_time_attributes_on :instantiationRights
     include PBCore::Attributes::TimeInterval
 
     build_xml do |xml|

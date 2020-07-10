@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::PlaybackSpeed < Element
+  class Instantiation::EssenceTrack::PlaybackSpeed < ContentElement
     element :essenceTrackPlaybackSpeed, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

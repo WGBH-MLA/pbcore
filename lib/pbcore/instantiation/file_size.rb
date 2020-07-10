@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::FileSize < Element
+  class Instantiation::FileSize < ContentElement
     element :instantiationFileSize, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

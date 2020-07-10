@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::Relation::Type < Element
+  class Instantiation::Relation::Type < ContentElement
     element :instantiationRelationType, as: :value
 
     build_xml do |xml|

@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class AssetDate < Element
+  class AssetDate < ContentElement
     element :pbcoreAssetDate, as: :value
     attribute :dateType, as: :type
 

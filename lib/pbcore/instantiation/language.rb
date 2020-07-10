@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Language < Element
+  class Instantiation::Language < ContentElement
     element :instantiationLanguage, as: :value
 
     build_xml do |xml|

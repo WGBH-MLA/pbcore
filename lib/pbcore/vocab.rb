@@ -1,6 +1,12 @@
 module PBCore
   module Vocab
     class << self
+      def asset_types
+        [ "Album", "Animation", "Clip", "Collection", "Compilation", "Episode",
+          "Miniseries", "Program", "Promo", "Raw Footage", "Segment", "Series",
+          "Season", "Subseries" ]
+      end
+
       def date_types
         [ "accepted", "available", "available end", "available start",
           "broadcast", "captured", "created", "copyright", "deletion",

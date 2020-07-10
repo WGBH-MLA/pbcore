@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Annotation < Element
+  class Instantiation::Annotation < ContentElement
     element :instantiationAnnotation, as: :value
     attribute :annotationType, as: :type
 

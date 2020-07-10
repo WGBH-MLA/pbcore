@@ -1,9 +1,6 @@
 FactoryBot.define do
-  factory :pbcore_contributor_contributor, class: PBCore::Contributor::Contributor, parent: :pbcore_element do
-    skip_create
-    
-    affiliation { 'AnAffiliation' }    
-    value { 'ContributorName' }
-    initialize_with { new(attributes) }
+  factory :pbcore_contributor_contributor, class: PBCore::Contributor::Contributor, parent: :pbcore_content_element do
+    affiliation { Faker::Company.name }
+    value { Faker::FunnyName.two_word_name }
   end
 end

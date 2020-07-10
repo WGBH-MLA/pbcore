@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Standard < Element
+  class Instantiation::Standard < ContentElement
     element :instantiationStandard, as: :value
 
     attribute :profile, as: :profile

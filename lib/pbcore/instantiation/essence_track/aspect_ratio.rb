@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::AspectRatio < Element
+  class Instantiation::EssenceTrack::AspectRatio < ContentElement
     element :essenceTrackAspectRatio, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure
