@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Coverage::Type < Element
+  class Coverage::Type < ContentElement
     element :coverageType, as: :value
 
     build_xml do |xml|

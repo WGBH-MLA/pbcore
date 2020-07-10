@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Identifier < Element
+  class Identifier < ContentElement
     element :pbcoreIdentifier, as: :value
 
     build_xml do |xml|

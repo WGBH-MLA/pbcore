@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :pbcore_contributor_contributor, class: PBCore::Contributor::Contributor, parent: :pbcore_element do
+  factory :pbcore_contributor_contributor, class: PBCore::Contributor::Contributor, parent: :pbcore_content_element do
     skip_create
     
     affiliation { 'AnAffiliation' }    

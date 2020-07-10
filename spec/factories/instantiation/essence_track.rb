@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_essence_track, class: PBCore::Instantiation::EssenceTrack , parent: :pbcore_element do
+  factory :pbcore_instantiation_essence_track, class: PBCore::Instantiation::EssenceTrack , parent: :pbcore_content_element do
     skip_create
 
     type            { build(:pbcore_instantiation_essence_track_type) }

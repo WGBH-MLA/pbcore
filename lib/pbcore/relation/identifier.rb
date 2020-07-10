@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Relation::Identifier < Element
+  class Relation::Identifier < ContentElement
     element :pbcoreRelationIdentifier, as: :value
 
     build_xml do |xml|

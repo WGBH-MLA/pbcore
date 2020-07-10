@@ -2,7 +2,7 @@ require 'pbcore'
 require 'faker'
 
 FactoryBot.define do
-  factory :pbcore_title, class: PBCore::Title, parent: :pbcore_element do
+  factory :pbcore_title, class: PBCore::Title, parent: :pbcore_content_element do
     type { Faker::Hacker.adjective }
     type_source { Faker::Internet.url }
     type_ref { Faker::Internet.url }

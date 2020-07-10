@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class AssetType < Element
+  class AssetType < ContentElement
     element :pbcoreAssetType, as: :value
 
     build_xml do |xml|

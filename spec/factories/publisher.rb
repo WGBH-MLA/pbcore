@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :pbcore_publisher, class: PBCore::Publisher, parent: :pbcore_element do
+  factory :pbcore_publisher, class: PBCore::Publisher, parent: :pbcore_content_element do
     skip_create
 
     publisher { create(:pbcore_publisher_publisher) }

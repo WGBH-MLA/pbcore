@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::Relation::Identifier < Element
+  class Instantiation::Relation::Identifier < ContentElement
     element :instantiationRelationIdentifier, as: :value
 
     build_xml do |xml|

@@ -2,7 +2,7 @@ require 'pbcore'
 require 'faker'
 
 FactoryBot.define do
-  factory :pbcore_contributor, class: PBCore::Contributor, parent: :pbcore_element do
+  factory :pbcore_contributor, class: PBCore::Contributor, parent: :pbcore_content_element do
     skip_create
 
     contributor { build(:pbcore_contributor_contributor) }

@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_essence_track_aspect_ratio, class: PBCore::Instantiation::EssenceTrack::AspectRatio, parent: :pbcore_element do
+  factory :pbcore_instantiation_essence_track_aspect_ratio, class: PBCore::Instantiation::EssenceTrack::AspectRatio, parent: :pbcore_content_element do
     skip_create
 
     value { rand(10).to_s + ':' + rand(10).to_s }

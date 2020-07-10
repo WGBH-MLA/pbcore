@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::Annotation < Element
+  class Instantiation::EssenceTrack::Annotation < ContentElement
     element :essenceTrackAnnotation, as: :value
 
     attribute :annotationType, as: :type

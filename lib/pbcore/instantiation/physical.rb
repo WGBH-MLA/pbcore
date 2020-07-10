@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Physical < Element
+  class Instantiation::Physical < ContentElement
     element :instantiationPhysical, as: :value
 
     build_xml do |xml|

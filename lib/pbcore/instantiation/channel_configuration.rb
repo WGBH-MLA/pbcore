@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::ChannelConfiguration < Element
+  class Instantiation::ChannelConfiguration < ContentElement
     element :instantiationChannelConfiguration, as: :value
 
     build_xml do |xml|

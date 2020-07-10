@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_digital, class: PBCore::Instantiation::Digital, parent: :pbcore_element do
+  factory :pbcore_instantiation_digital, class: PBCore::Instantiation::Digital, parent: :pbcore_content_element do
     skip_create
 
     value { 'mp4' }

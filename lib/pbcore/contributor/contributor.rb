@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Contributor::Contributor < Element
+  class Contributor::Contributor < ContentElement
     element :contributor, as: :value
     attribute :affiliation, as: :affiliation
 

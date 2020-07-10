@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_rights_summary, class: PBCore::RightsSummary, parent: :pbcore_element do
+  factory :pbcore_rights_summary, class: PBCore::RightsSummary, parent: :pbcore_content_element do
     skip_create
 
     summary { create(:pbcore_rights_summary_summary) }

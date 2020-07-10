@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class DescriptionDocument < Element
+  class DescriptionDocument < ContentElement
     elements :pbcoreIdentifier, as: :identifiers, class: PBCore::Identifier
     elements :pbcoreTitle, as: :titles, class: PBCore::Title
     elements :pbcoreDescription, as: :descriptions, class: PBCore::Description

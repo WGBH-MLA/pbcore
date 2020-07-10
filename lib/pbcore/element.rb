@@ -8,19 +8,12 @@ module PBCore
   # TODO: decouple XML building behavior from schema-related declarations.
   class Element
     include SAXMachine
-    include PBCore::Attributes::Common
 
     # Defines which accessor is used to get the value within an element.
     # Here we defined it be simply :value.
     value(:value, {}) do |val|
       val == :no_buffer ? nil : val
     end
-
-    # Defind attributes common to all PBCore elements.
-    # attribute :source
-    # attribute :ref
-    # attribute :annotation
-    # attribute :version
 
     # Returns a hash of child element instances.
     def elements(key_by_xml_name: false)

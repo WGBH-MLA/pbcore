@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Rights < Element
+  class Instantiation::Rights < ContentElement
     autoload :Summary,   'pbcore/instantiation/rights/summary'
     autoload :Link,      'pbcore/instantiation/rights/link'
 

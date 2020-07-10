@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Publisher::Publisher < Element
+  class Publisher::Publisher < ContentElement
     element :publisher, as: :value
 
     attribute :affiliation, as: :affiliation

@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Tracks < Element
+  class Instantiation::Tracks < ContentElement
     element :instantiationTracks, as: :value
 
     build_xml do |xml|

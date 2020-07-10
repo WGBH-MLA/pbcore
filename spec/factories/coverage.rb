@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_coverage, class: PBCore::Coverage, parent: :pbcore_element do
+  factory :pbcore_coverage, class: PBCore::Coverage, parent: :pbcore_content_element do
     skip_create
 
     coverage  { build(:pbcore_coverage_coverage) }

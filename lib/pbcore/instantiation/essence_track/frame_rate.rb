@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::FrameRate < Element
+  class Instantiation::EssenceTrack::FrameRate < ContentElement
     element :essenceTrackFrameRate, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

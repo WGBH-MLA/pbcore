@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::Language < Element
+  class Instantiation::EssenceTrack::Language < ContentElement
     element :essenceTrackLanguage, as: :value
 
     build_xml do |xml|

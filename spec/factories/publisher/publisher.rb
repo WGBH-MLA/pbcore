@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :pbcore_publisher_publisher, class: PBCore::Publisher::Publisher, parent: :pbcore_element do
+  factory :pbcore_publisher_publisher, class: PBCore::Publisher::Publisher, parent: :pbcore_content_element do
     skip_create
     affiliation { Faker::Lorem.words }
     affiliation_ref { Faker::Internet.url }

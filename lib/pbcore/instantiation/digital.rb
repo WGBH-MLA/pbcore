@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Digital < Element
+  class Instantiation::Digital < ContentElement
     element :instantiationDigital, as: :value
 
     build_xml do |xml|

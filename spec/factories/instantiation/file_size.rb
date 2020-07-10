@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_file_size, class: PBCore::Instantiation::FileSize, parent: :pbcore_element do
+  factory :pbcore_instantiation_file_size, class: PBCore::Instantiation::FileSize, parent: :pbcore_content_element do
     skip_create
 
     value { (rand * 100).round(2) }

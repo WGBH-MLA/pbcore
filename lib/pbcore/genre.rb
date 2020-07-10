@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Genre < Element
+  class Genre < ContentElement
     element :pbcoreGenre, as: :value
 
     build_xml do |xml|

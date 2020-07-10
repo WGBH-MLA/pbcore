@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_relation, class: PBCore::Instantiation::Relation, parent: :pbcore_element do
+  factory :pbcore_instantiation_relation, class: PBCore::Instantiation::Relation, parent: :pbcore_content_element do
     skip_create
 
     type { create(:pbcore_instantiation_relation_type) }

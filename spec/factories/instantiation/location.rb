@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_location, class: PBCore::Instantiation::Location, parent: :pbcore_element do
+  factory :pbcore_instantiation_location, class: PBCore::Instantiation::Location, parent: :pbcore_content_element do
     skip_create
 
     value { Faker::Address.city }

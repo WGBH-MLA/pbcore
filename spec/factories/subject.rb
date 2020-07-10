@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :pbcore_subject, class: PBCore::Subject, parent: :pbcore_element do
+  factory :pbcore_subject, class: PBCore::Subject, parent: :pbcore_content_element do
     skip_create
     type { Faker::Hacker.adjective }
     type_source { Faker::Internet.url }

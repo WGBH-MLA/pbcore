@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::BitDepth < Element
+  class Instantiation::EssenceTrack::BitDepth < ContentElement
     element :essenceTrackBitDepth, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

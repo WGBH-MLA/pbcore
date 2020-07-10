@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Subject < Element
+  class Subject < ContentElement
     element :pbcoreSubject, as: :value
     attribute :subjectType, as: :type
     attribute :subjectTypeRef, as: :type_ref

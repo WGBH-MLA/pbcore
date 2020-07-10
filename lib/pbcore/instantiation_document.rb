@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class InstantiationDocument < Element
+  class InstantiationDocument < ContentElement
     autoload :Identifier,           'pbcore/instantiation/identifier'
     autoload :Date,                 'pbcore/instantiation/date'
     autoload :Dimensions,           'pbcore/instantiation/dimensions'

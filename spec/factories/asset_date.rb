@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_asset_date, class: PBCore::AssetDate, parent: :pbcore_element do
+  factory :pbcore_asset_date, class: PBCore::AssetDate, parent: :pbcore_content_element do
     skip_create
     value { DateTimeHelpers.rand_date_time }
     type { Faker::Lorem.word }

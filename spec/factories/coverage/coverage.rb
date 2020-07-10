@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_coverage_coverage, class: PBCore::Coverage::Coverage, parent: :pbcore_element do
+  factory :pbcore_coverage_coverage, class: PBCore::Coverage::Coverage, parent: :pbcore_content_element do
     skip_create
 
     value { Faker::Lorem.words }

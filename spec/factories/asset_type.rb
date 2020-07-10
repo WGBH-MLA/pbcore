@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_asset_type, class: PBCore::AssetType, parent: :pbcore_element do
+  factory :pbcore_asset_type, class: PBCore::AssetType, parent: :pbcore_content_element do
     skip_create
 
     # this seems to yield :no_buffer as the value sometimes, changing

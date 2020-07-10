@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Extension::Wrap::Element < Element
+  class Extension::Wrap::Element < ContentElement
     element :extensionElement, as: :value
 
     build_xml do |xml|

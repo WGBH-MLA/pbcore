@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_description_document, class: PBCore::DescriptionDocument, parent: :pbcore_element do
+  factory :pbcore_description_document, class: PBCore::DescriptionDocument, parent: :pbcore_content_element do
     skip_create
 
     # NOTE: Additional identifiers may be added with :other_identifiers.

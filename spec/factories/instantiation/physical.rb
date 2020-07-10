@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_physical, class: PBCore::Instantiation::Physical, parent: :pbcore_element do
+  factory :pbcore_instantiation_physical, class: PBCore::Instantiation::Physical, parent: :pbcore_content_element do
     skip_create
 
     value { 'Film: 16mm' }

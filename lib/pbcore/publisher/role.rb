@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Publisher::Role < Element
+  class Publisher::Role < ContentElement
     element :publisherRole, as: :value
 
     build_xml do |xml|

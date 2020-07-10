@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_rights, class: PBCore::Instantiation::Rights, parent: :pbcore_element do
+  factory :pbcore_instantiation_rights, class: PBCore::Instantiation::Rights, parent: :pbcore_content_element do
     skip_create
     summary { build(:pbcore_instantiation_rights_summary) }
     link    { build(:pbcore_instantiation_rights_link) }

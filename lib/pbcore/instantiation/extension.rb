@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Extension < Element
+  class Instantiation::Extension < ContentElement
     autoload :Wrap,      'pbcore/instantiation/extension/wrap'
     autoload :Embedded,  'pbcore/instantiation/extension/embedded'
 

@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_generations, class: PBCore::Instantiation::Generations, parent: :pbcore_element do
+  factory :pbcore_instantiation_generations, class: PBCore::Instantiation::Generations, parent: :pbcore_content_element do
     skip_create
 
     value { [ 'Proxy', 'Mezzanine', 'Master', 'Preservation Master' ].sample }

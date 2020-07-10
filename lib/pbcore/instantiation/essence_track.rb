@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::EssenceTrack < Element
+  class Instantiation::EssenceTrack < ContentElement
     autoload :Type,           'pbcore/instantiation/essence_track/type'
     autoload :Identifier,     'pbcore/instantiation/essence_track/identifier'
     autoload :Standard,       'pbcore/instantiation/essence_track/standard'

@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_identifier, class: PBCore::Instantiation::Identifier, parent: :pbcore_element do
+  factory :pbcore_instantiation_identifier, class: PBCore::Instantiation::Identifier, parent: :pbcore_content_element do
     skip_create
 
     source { Faker::Company.name }

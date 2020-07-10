@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::Encoding < Element
+  class Instantiation::EssenceTrack::Encoding < ContentElement
     element :essenceTrackEncoding, as: :value
 
     build_xml do |xml|

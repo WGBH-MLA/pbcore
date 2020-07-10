@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Location < Element
+  class Instantiation::Location < ContentElement
     element :instantiationLocation, as: :value
 
     build_xml do |xml|

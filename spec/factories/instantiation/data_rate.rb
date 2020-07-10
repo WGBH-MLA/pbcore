@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_data_rate, class: PBCore::Instantiation::DataRate, parent: :pbcore_element do
+  factory :pbcore_instantiation_data_rate, class: PBCore::Instantiation::DataRate, parent: :pbcore_content_element do
     skip_create
 
     value { rand(100).to_s }

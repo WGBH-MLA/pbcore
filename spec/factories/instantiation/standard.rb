@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_standard, class: PBCore::Instantiation::Standard, parent: :pbcore_element do
+  factory :pbcore_instantiation_standard, class: PBCore::Instantiation::Standard, parent: :pbcore_content_element do
     skip_create
 
     profile { Faker::Hacker.noun }

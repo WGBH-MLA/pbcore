@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Rights::Summary < Element
+  class Instantiation::Rights::Summary < ContentElement
     element :rightsSummary, as: :value
 
     build_xml do |xml|

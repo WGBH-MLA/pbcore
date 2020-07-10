@@ -6,6 +6,7 @@ module PBCore
   GEM_ROOT = File.dirname(File.dirname(__FILE__))
 
   autoload :Element,                  'pbcore/element'
+  autoload :ContentElement,           'pbcore/content_element'
   autoload :Attributes,               'pbcore/attributes'
   autoload :DescriptionDocument,      'pbcore/description_document'
   autoload :AssetType,                'pbcore/asset_type'

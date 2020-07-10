@@ -1,7 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_dimensions, class: PBCore::Instantiation::Dimensions, parent: :pbcore_element do
+  factory :pbcore_instantiation_dimensions, class: PBCore::Instantiation::Dimensions, parent: :pbcore_content_element do
     skip_create
 
     units_of_measure { Faker::Measurement.height("all") }
