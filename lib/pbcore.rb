@@ -2,6 +2,9 @@ require "pbcore/version"
 require "pbcore/errors"
 
 module PBCore
+
+  GEM_ROOT = File.dirname(File.dirname(__FILE__))
+
   autoload :Element,                  'pbcore/element'
   autoload :Attributes,               'pbcore/attributes'
   autoload :DescriptionDocument,      'pbcore/description_document'
@@ -25,4 +28,17 @@ module PBCore
   autoload :Instantiation,            'pbcore/instantiation'
   autoload :InstantiationDocument,    'pbcore/instantiation_document'
   autoload :Vocab,                    'pbcore/vocab'
+
+  class << self
+    def xsd
+      File.read(File.join(GEM_ROOT, 'lib', 'pbcore-2.1.xsd'))
+    end
+
+    def validate(xml)
+      errors = Nokogiri::XML::Schema(xsd).validate(Nokogiri::XML(xml))
+      raise ValidationError, "#{errors.count} errors:\n#{errors.join("\n")}" unless errors.empty?
+    end
+  end
+
+  class ValidationError < StandardError; end
 end

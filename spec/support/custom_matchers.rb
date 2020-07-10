@@ -117,10 +117,3 @@ RSpec::Matchers.define :have_child_elements do |accessor, klass|
     end
   end
 end
-
-# Shortcut matcher for specific attributes.
-def have_common_pbcore_attributes
-  have_attributes(source: be_present,
-                  ref: be_present,
-                  annotation: be_present)
-end
