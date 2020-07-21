@@ -1,9 +1,7 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_extension_wrap_authority_used, class: PBCore::Extension::Wrap::AuthorityUsed, parent: :pbcore_content_element do
-    skip_create
+  factory :pbcore_extension_wrap_authority_used, class: PBCore::Extension::Wrap::AuthorityUsed, parent: :pbcore_element do
     value { Faker::Job.title }
-    initialize_with  { new(attributes) }
   end
 end

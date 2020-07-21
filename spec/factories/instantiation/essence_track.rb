@@ -1,8 +1,8 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_essence_track, class: PBCore::Instantiation::EssenceTrack , parent: :pbcore_content_element do
-    skip_create
+  factory :pbcore_instantiation_essence_track, class: PBCore::Instantiation::EssenceTrack , parent: :pbcore_element do
+    
 
     type            { build(:pbcore_instantiation_essence_track_type) }
     identifiers     { build_list(:pbcore_instantiation_essence_track_identifier, rand(1..3)) }
@@ -24,6 +24,6 @@ FactoryBot.define do
         aspect_ratio { build(:pbcore_instantiation_essence_track_aspect_ratio, :sixteen_nine) }
     end
 
-    initialize_with { new(attributes) }
+    
   end
 end

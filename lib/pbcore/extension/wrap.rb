@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Extension::Wrap < ContentElement
+  class Extension::Wrap < Element
     autoload :AuthorityUsed,      'pbcore/extension/wrap/authority_used'
     autoload :Element,            'pbcore/extension/wrap/element'
     autoload :Value,              'pbcore/extension/wrap/value'

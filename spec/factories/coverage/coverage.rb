@@ -2,9 +2,10 @@ require 'pbcore'
 
 FactoryBot.define do
   factory :pbcore_coverage_coverage, class: PBCore::Coverage::Coverage, parent: :pbcore_content_element do
-    skip_create
 
-    value { Faker::Lorem.words }
+    # TODO: Use controlled vocabularies listed here:
+    # http://pbcore.org/elements/coverage
+    value { Faker::Lorem.words.join(' ') }
 
     trait :spatial do
       source { "latitude, longitude" }
@@ -16,6 +17,6 @@ FactoryBot.define do
       value { rand(1950..2018) }
     end
 
-    initialize_with { new(attributes) }
+    
   end
 end

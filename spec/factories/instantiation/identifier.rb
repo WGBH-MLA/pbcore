@@ -2,7 +2,7 @@ require 'pbcore'
 
 FactoryBot.define do
   factory :pbcore_instantiation_identifier, class: PBCore::Instantiation::Identifier, parent: :pbcore_content_element do
-    skip_create
+    
 
     source { Faker::Company.name }
     value { Faker::IDNumber.valid }
@@ -12,6 +12,6 @@ FactoryBot.define do
       value { "cpb-blah-blah-blah" }
     end
 
-    initialize_with { new(attributes) }
+    
   end
 end

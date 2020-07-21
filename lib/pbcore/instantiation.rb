@@ -36,7 +36,7 @@ module PBCore
     element  :instantiationLocation, as: :location, class: PBCore::Instantiation::Location
     element  :instantiationMediaType, as: :media_type, class: PBCore::Instantiation::MediaType
     elements :instantiationGenerations, as: :generations, class: PBCore::Instantiation::Generations
-    elements :instantiationTimeStart, as: :time_starts, class: PBCore::Instantiation::TimeStart
+    element  :instantiationTimeStart, as: :time_start, class: PBCore::Instantiation::TimeStart
     element  :instantiationFileSize, as: :file_size, class: PBCore::Instantiation::FileSize
     element  :instantiationDuration, as: :duration, class: PBCore::Instantiation::Duration
     element  :instantiationDataRate, as: :data_rate, class: PBCore::Instantiation::DataRate
@@ -65,7 +65,7 @@ module PBCore
         media_type.build(xml) if media_type
         generations.each { |generations_element| generations_element.build(xml) }
         file_size.build(xml) if file_size
-        time_starts.each { |time_start| time_start.build(xml) }
+        time_start.build(xml)
         duration.build(xml) if duration
         data_rate.build(xml) if data_rate
         colors.build(xml) if colors

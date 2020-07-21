@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Relation < ContentElement
+  class Instantiation::Relation < Element
     autoload :Type,        'pbcore/instantiation/relation/type'
     autoload :Identifier,  'pbcore/instantiation/relation/identifier'
 

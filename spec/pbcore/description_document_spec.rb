@@ -62,7 +62,17 @@ RSpec.describe PBCore::DescriptionDocument do
   context 'with a "complete" instance' do
     let(:complete_xml) { build(:pbcore_description_document).to_xml }
     it 'validates with the PBCore schema definition' do
-      expect(PBCore.validate(complete_xml)).not_to raise_error
+
+      # debug, remove
+      begin
+        PBCore.validate(complete_xml)
+      rescue => e
+        puts e.message
+        puts "PBCore XML = \n#{complete_xml}"
+        exit 1
+      end
+
+      expect { PBCore.validate(complete_xml) }.not_to raise_error
     end
   end
 end

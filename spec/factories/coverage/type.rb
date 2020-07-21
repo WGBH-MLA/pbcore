@@ -1,21 +1,8 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_coverage_type, class: PBCore::Coverage::Type, parent: :pbcore_content_element do
-    skip_create
-
-    value { Faker::Hacker.adjective }
-
-    trait :spatial do
-      source { "latitude, longitude" }
-      value  { "#{Faker::Address.latitude}, #{Faker::Address.longitude}" }
-    end
-
-    trait :temporal do
-      source { nil }
-      value { rand(1950..2018) }
-    end
-
-    initialize_with { new(attributes) }
+  factory :pbcore_coverage_type, class: PBCore::Coverage::Type, parent: :pbcore_element do
+    # TODO: Replace with rando term from controlled vocab once we get it.
+    value { ["Spatial", "Temporal"].sample }
   end
 end

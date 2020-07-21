@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Extension::Wrap::AuthorityUsed < ContentElement
+  class Extension::Wrap::AuthorityUsed < Element
     element :extensionAuthorityUsed, as: :value
 
     build_xml do |xml|

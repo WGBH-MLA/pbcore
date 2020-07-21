@@ -2,10 +2,8 @@ require 'pbcore'
 
 FactoryBot.define do
   factory :pbcore_asset_date, class: PBCore::AssetDate, parent: :pbcore_content_element do
-    skip_create
     value { DateTimeHelpers.rand_date_time }
     type { Faker::Lorem.word }
-    initialize_with { new(attributes) }
 
     transient do
       # `format` should be a valid format string accepted by DateTime#strftime.

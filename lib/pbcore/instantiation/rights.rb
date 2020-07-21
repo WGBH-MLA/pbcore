@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Rights < ContentElement
+  class Instantiation::Rights < Element
     autoload :Summary,   'pbcore/instantiation/rights/summary'
     autoload :Link,      'pbcore/instantiation/rights/link'
 
@@ -9,7 +9,6 @@ module PBCore
     element :rightsSummary, as: :summary, class: PBCore::Instantiation::Rights::Summary
     element :rightsLink, as: :link, class: PBCore::Instantiation::Rights::Link
 
-    # has_time_attributes_on :instantiationRights
     include PBCore::Attributes::TimeInterval
 
     build_xml do |xml|
