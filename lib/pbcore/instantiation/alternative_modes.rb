@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::AlternativeModes < Element
+  class Instantiation::AlternativeModes < ContentElement
     element :instantiationAlternativeModes, as: :value
 
     build_xml do |xml|

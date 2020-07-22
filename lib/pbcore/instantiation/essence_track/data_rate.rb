@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::DataRate < Element
+  class Instantiation::EssenceTrack::DataRate < ContentElement
     element :essenceTrackDataRate, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

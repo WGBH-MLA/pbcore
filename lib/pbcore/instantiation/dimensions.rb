@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::Dimensions < Element
+  class Instantiation::Dimensions < ContentElement
     element :instantiationDimensions, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

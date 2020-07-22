@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Relation::Type < Element
+  class Relation::Type < ContentElement
     element :pbcoreRelationType, as: :value
 
     build_xml do |xml|

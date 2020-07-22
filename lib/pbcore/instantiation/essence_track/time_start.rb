@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::TimeStart < Element
+  class Instantiation::EssenceTrack::TimeStart < ContentElement
     element :essenceTrackTimeStart, as: :value
 
     build_xml do |xml|

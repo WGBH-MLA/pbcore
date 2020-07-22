@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Instantiation::MediaType < Element
+  class Instantiation::MediaType < ContentElement
     element :instantiationMediaType, as: :value
 
     build_xml do |xml|

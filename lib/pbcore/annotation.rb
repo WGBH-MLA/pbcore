@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Annotation < Element
+  class Annotation < ContentElement
     element :pbcoreAnnotation, as: :value
     attribute :annotationType, as: :type
 

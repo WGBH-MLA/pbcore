@@ -1,12 +1,13 @@
 require 'pbcore'
 
 FactoryBot.define do
-  factory :pbcore_instantiation_language, class: PBCore::Instantiation::Language, parent: :pbcore_element do
-    skip_create
+  factory :pbcore_instantiation_language, class: PBCore::Instantiation::Language, parent: :pbcore_content_element do
+    
 
     source { [ "ISO 639.2", "ISO 639.3" ].sample }
-    value { Faker::Demographic.demonym }
+    # TODO: replace with samples from actual standard.
+    value { ('a'..'z').to_a.sample(3).join }
 
-    initialize_with { new(attributes) }
+    
   end
 end

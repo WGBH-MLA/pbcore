@@ -14,7 +14,7 @@ RSpec.describe PBCore::Instantiation do
     it { is_expected.to have_sax_machine_top_level_element :instantiationLocation, as: :location, class: PBCore::Instantiation::Location }
     it { is_expected.to have_sax_machine_top_level_element :instantiationMediaType, as: :media_type, class: PBCore::Instantiation::MediaType }
     it { is_expected.to have_sax_machine_collection_element :instantiationGenerations, as: :generations, class: PBCore::Instantiation::Generations }
-    it { is_expected.to have_sax_machine_collection_element :instantiationTimeStart, as: :time_starts, class: PBCore::Instantiation::TimeStart }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationTimeStart, as: :time_start, class: PBCore::Instantiation::TimeStart }
     it { is_expected.to have_sax_machine_top_level_element :instantiationFileSize, as: :file_size, class: PBCore::Instantiation::FileSize }
     it { is_expected.to have_sax_machine_top_level_element :instantiationDuration, as: :duration, class: PBCore::Instantiation::Duration }
     it { is_expected.to have_sax_machine_top_level_element :instantiationDataRate, as: :data_rate, class: PBCore::Instantiation::DataRate }

@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::Standard < Element
+  class Instantiation::EssenceTrack::Standard < ContentElement
     element :essenceTrackStandard, as: :value
 
     build_xml do |xml|

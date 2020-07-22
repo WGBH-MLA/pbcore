@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Creator::Role < Element
+  class Creator::Role < ContentElement
     element :creatorRole, as: :value
 
     build_xml do |xml|

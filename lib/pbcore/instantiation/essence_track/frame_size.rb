@@ -1,5 +1,5 @@
 module PBCore
-  class Instantiation::EssenceTrack::FrameSize < Element
+  class Instantiation::EssenceTrack::FrameSize < ContentElement
     element :essenceTrackFrameSize, as: :value
 
     attribute :unitsOfMeasure, as: :units_of_measure

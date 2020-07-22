@@ -24,13 +24,13 @@ RSpec.describe PBCore::InstantiationDocument do
     it { is_expected.to have_sax_machine_top_level_element :instantiationTracks, as: :tracks, class: PBCore::Instantiation::Tracks }
     it { is_expected.to have_sax_machine_top_level_element :instantiationChannelConfiguration, as: :channel_configuration, class: PBCore::Instantiation::ChannelConfiguration }
     it { is_expected.to have_sax_machine_top_level_element :instantiationAlternativeModes, as: :alternative_modes, class: PBCore::Instantiation::AlternativeModes }
+    it { is_expected.to have_sax_machine_top_level_element :instantiationTimeStart, as: :time_start, class: PBCore::Instantiation::TimeStart }
 
     # Multiple child elements
     it { is_expected.to have_sax_machine_collection_element :instantiationIdentifier, as: :identifiers, class: PBCore::Instantiation::Identifier }
     it { is_expected.to have_sax_machine_collection_element :instantiationDate, as: :dates, class: PBCore::Instantiation::Date }
     it { is_expected.to have_sax_machine_collection_element :instantiationDimensions, as: :dimensions, class: PBCore::Instantiation::Dimensions }
     it { is_expected.to have_sax_machine_collection_element :instantiationGenerations, as: :generations, class: PBCore::Instantiation::Generations }
-    it { is_expected.to have_sax_machine_collection_element :instantiationTimeStart, as: :time_starts, class: PBCore::Instantiation::TimeStart }
     it { is_expected.to have_sax_machine_collection_element :instantiationLanguage, as: :languages, class: PBCore::Instantiation::Language }
     it { is_expected.to have_sax_machine_collection_element :instantiationEssenceTrack, as: :essence_tracks, class: PBCore::Instantiation::EssenceTrack }
     it { is_expected.to have_sax_machine_collection_element :instantiationExtension, as: :extensions, class: PBCore::Instantiation::Extension }

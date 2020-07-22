@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Description < Element
+  class Description < ContentElement
     element :pbcoreDescription, as: :value
     attribute :descriptionType, as: :type
     attribute :descriptionTypeRef, as: :type_ref

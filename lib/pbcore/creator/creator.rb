@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Creator::Creator < Element
+  class Creator::Creator < ContentElement
     element :creator, as: :value
     attribute :affiliation, as: :affiliation
     attribute :affiliationSource, as: :affiliation_source

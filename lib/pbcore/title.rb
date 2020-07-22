@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Title < Element
+  class Title < ContentElement
     element :pbcoreTitle, as: :value
     attribute :titleType, as: :type
     attribute :titleTypeSource, as: :type_source

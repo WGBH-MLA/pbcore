@@ -2,7 +2,7 @@ require 'pbcore'
 
 FactoryBot.define do
   factory :pbcore_instantiation_document, class: PBCore::InstantiationDocument, parent: :pbcore_element do
-    skip_create
+    
 
     identifiers             { build_list(:pbcore_instantiation_identifier, rand(1..3)) }
     dates                   { build_list(:pbcore_instantiation_date, rand(1..3)) }
@@ -13,7 +13,7 @@ FactoryBot.define do
     location                { build(:pbcore_instantiation_location) }
     media_type              { build(:pbcore_instantiation_media_type) }
     generations             { build_list(:pbcore_instantiation_generations, rand(1..3)) }
-    time_starts             { build_list(:pbcore_instantiation_time_start, rand(1..3)) }
+    time_start              { build(:pbcore_instantiation_time_start) }
     duration                { build(:pbcore_instantiation_duration) }
     colors                  { build(:pbcore_instantiation_colors) }
     rights                  { build_list(:pbcore_instantiation_rights, rand(1..3)) }
@@ -33,7 +33,7 @@ FactoryBot.define do
     end_time { DateTimeHelpers.rand_date_time after: start_time }
     time_annotation { Faker::Movies::StarWars.quote }
 
-    initialize_with { new(attributes) }
+    
 
     trait :media_info do
       physical          { }

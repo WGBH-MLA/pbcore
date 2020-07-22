@@ -1,7 +1,7 @@
 require 'pbcore/element'
 
 module PBCore
-  class Contributor::Role < Element
+  class Contributor::Role < ContentElement
     element :contributorRole, as: :value
     attribute :portrayal, as: :portrayal
 
