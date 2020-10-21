@@ -65,7 +65,7 @@ module PBCore
         media_type.build(xml) if media_type
         generations.each { |generations_element| generations_element.build(xml) }
         file_size.build(xml) if file_size
-        time_start.build(xml)
+        time_start.build(xml) if time_start
         duration.build(xml) if duration
         data_rate.build(xml) if data_rate
         colors.build(xml) if colors
