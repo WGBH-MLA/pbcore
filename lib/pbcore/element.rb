@@ -1,4 +1,5 @@
 require 'sax-machine'
+require 'nokogiri'
 
 module SAXMachine::SAXAbstractHandler
   NO_BUFFER = ''

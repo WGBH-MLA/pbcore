@@ -1,5 +1,6 @@
 require "pbcore/version"
 require "pbcore/errors"
+require "nokogiri"
 
 module PBCore
 
