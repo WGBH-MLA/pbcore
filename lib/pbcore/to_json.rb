@@ -130,17 +130,28 @@ module PBCore
               # yikes! oh well
               esstrack["essenceTrackExtension"] = arrayify_node(esstrack["essenceTrackExtension"])
 
+              # remove empty keys
+              esstrack = esstrack.compact
+
               data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"][essindex] = esstrack
             end
           end
+
+          # remove empty keys
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index] = data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index].compact
         end
+
+
       end
 
       # no guarantees
       data["pbcoreDescriptionDocument"]["pbcorePart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePart"])
       data["pbcoreDescriptionDocument"]["pbcoreExtension"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreExtension"])
 
-      output = JSON.pretty_generate(deep_compact(data))
+      # remove empty keys
+      data["pbcoreDescriptionDocument"] = data["pbcoreDescriptionDocument"].compact
+
+      output = JSON.pretty_generate(data)
     end
   end
 end
