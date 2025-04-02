@@ -31,6 +31,9 @@ module PBCore
   autoload :InstantiationDocument,    'pbcore/instantiation_document'
   autoload :Vocab,                    'pbcore/vocab'
 
+  # utilities
+  autoload :ToJSON,                   'util/to_json'
+
   class << self
     def xsd
       File.read(File.join(GEM_ROOT, 'lib', 'pbcore-2.1.xsd'))
