@@ -17,6 +17,16 @@ module PBCore
         end
       end
     end
+    def deep_compact(hash)
+      res_hash = hash.map do |key, value|
+        value = deep_compact(value) if value.is_a?(Hash)
+
+        value = nil if [{}, []].include?(value)
+        [key, value]
+      end
+
+      res_hash.to_h.compact
+    end
 
     def pbxml_to_json(xml)
         # escape double quotes (because they may appear in node values)
@@ -130,7 +140,7 @@ module PBCore
       data["pbcoreDescriptionDocument"]["pbcorePart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePart"])
       data["pbcoreDescriptionDocument"]["pbcoreExtension"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreExtension"])
 
-      output = JSON.pretty_generate(data.compact)
+      output = JSON.pretty_generate(deep_compact(data))
     end
   end
 end

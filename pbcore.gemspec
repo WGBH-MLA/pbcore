@@ -26,7 +26,6 @@ Gem::Specification.new do |spec|
                  spec/support/fake_version_helper.rb )
       # Exclude everything else in spec dir.
       # f.match(%r{^(spec)/}) unless keep.any?(f)
-
       keep
     end
   end
