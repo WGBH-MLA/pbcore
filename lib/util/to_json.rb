@@ -1,7 +1,7 @@
 require 'json'
 require 'nokogiri'
 module PBCore
-  module ToJson
+  module ToJSON
     def pbxml_to_json_xsl_doc
       Nokogiri::XSLT(File.read("pbcore_xml_to_json.xsl"))
     end
