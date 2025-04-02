@@ -1,5 +1,6 @@
 require 'json'
 require 'nokogiri'
+
 module PBCore
   module ToJSON
     def pbxml_to_json_xsl_doc

@@ -25,7 +25,9 @@ Gem::Specification.new do |spec|
       keep += %w( spec/support/date_time_helpers.rb
                  spec/support/fake_version_helper.rb )
       # Exclude everything else in spec dir.
-      f.match(%r{^(spec)/}) unless keep.any?(f)
+      # f.match(%r{^(spec)/}) unless keep.any?(f)
+
+      keep
     end
   end
 
