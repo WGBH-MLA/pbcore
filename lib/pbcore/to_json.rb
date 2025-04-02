@@ -25,7 +25,7 @@ module PBCore
         [key, value]
       end
 
-      res_hash.to_h.reject {|k,v| v == "null" || !v }
+      res_hash.to_h.compact
     end
 
     def pbxml_to_json(xml)
@@ -131,14 +131,14 @@ module PBCore
               esstrack["essenceTrackExtension"] = arrayify_node(esstrack["essenceTrackExtension"])
 
               # remove empty keys
-              esstrack = esstrack.reject {|k,v| v == "null" || !v }
+              esstrack = esstrack.compact
 
               data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"][essindex] = esstrack
             end
           end
 
           # remove empty keys
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index] = data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index].reject {|k,v| v == "null" || !v }
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index] = data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index].compact
         end
       end
 
@@ -147,7 +147,11 @@ module PBCore
       data["pbcoreDescriptionDocument"]["pbcoreExtension"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreExtension"])
 
       # remove empty keys
-      data["pbcoreDescriptionDocument"] = data["pbcoreDescriptionDocument"].reject {|k,v| v == "null" || !v }
+      data["pbcoreDescriptionDocument"] = data["pbcoreDescriptionDocument"].compact
+
+      puts "SHOW ME PLEASE"
+      puts data
+      puts data.inspect
 
       output = JSON.pretty_generate(data)
     end
