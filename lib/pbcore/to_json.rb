@@ -36,82 +36,82 @@ module PBCore
       raise "No Desc Doc TOO BAD" unless data && data["pbcoreDescriptionDocument"]
 
       # top multis
-      data["pbcoreDescriptionDocument"]["pbcoreAssetType"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAssetType"])
-      data["pbcoreDescriptionDocument"]["pbcoreAssetDate"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAssetDate"])
-      data["pbcoreDescriptionDocument"]["pbcoreIdentifier"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreIdentifier"])
-      data["pbcoreDescriptionDocument"]["pbcoreTitle"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreTitle"])
-      data["pbcoreDescriptionDocument"]["pbcoreSubject"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreSubject"])
-      data["pbcoreDescriptionDocument"]["pbcoreDescription"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreDescription"])
-      data["pbcoreDescriptionDocument"]["pbcoreGenre"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreGenre"])
-      data["pbcoreDescriptionDocument"]["pbcoreAudienceLevel"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAudienceLevel"])
-      data["pbcoreDescriptionDocument"]["pbcoreAudienceRating"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAudienceRating"])
-      data["pbcoreDescriptionDocument"]["pbcoreAnnotation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAnnotation"])
+      data["pbcoreDescriptionDocument"]["pbcoreAssetType"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAssetType"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAssetType"])
+      data["pbcoreDescriptionDocument"]["pbcoreAssetDate"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAssetDate"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAssetDate"])
+      data["pbcoreDescriptionDocument"]["pbcoreIdentifier"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreIdentifier"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreIdentifier"])
+      data["pbcoreDescriptionDocument"]["pbcoreTitle"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreTitle"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreTitle"])
+      data["pbcoreDescriptionDocument"]["pbcoreSubject"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreSubject"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreSubject"])
+      data["pbcoreDescriptionDocument"]["pbcoreDescription"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreDescription"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreDescription"])
+      data["pbcoreDescriptionDocument"]["pbcoreGenre"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreGenre"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreGenre"])
+      data["pbcoreDescriptionDocument"]["pbcoreAudienceLevel"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAudienceLevel"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAudienceLevel"])
+      data["pbcoreDescriptionDocument"]["pbcoreAudienceRating"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAudienceRating"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAudienceRating"])
+      data["pbcoreDescriptionDocument"]["pbcoreAnnotation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAnnotation"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreAnnotation"])
       
       # subelements but not multi
-      data["pbcoreDescriptionDocument"]["pbcoreRelation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRelation"])
-      data["pbcoreDescriptionDocument"]["pbcoreCoverage"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCoverage"])
+      data["pbcoreDescriptionDocument"]["pbcoreRelation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRelation"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRelation"])
+      data["pbcoreDescriptionDocument"]["pbcoreCoverage"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCoverage"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCoverage"])
       
       # nested multis
-      data["pbcoreDescriptionDocument"]["pbcoreCreator"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCreator"])
+      data["pbcoreDescriptionDocument"]["pbcoreCreator"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCreator"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCreator"])
       if data["pbcoreDescriptionDocument"]["pbcoreCreator"] && data["pbcoreDescriptionDocument"]["pbcoreCreator"].count > 0
         data["pbcoreDescriptionDocument"]["pbcoreCreator"].each_with_index do |_creator, index|
-          data["pbcoreDescriptionDocument"]["pbcoreCreator"][index]["creatorRole"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCreator"][index]["creatorRole"])
+          data["pbcoreDescriptionDocument"]["pbcoreCreator"][index]["creatorRole"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCreator"][index]["creatorRole"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreCreator"][index]["creatorRole"])
         end
       end
 
-      data["pbcoreDescriptionDocument"]["pbcoreContributor"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreContributor"])
+      data["pbcoreDescriptionDocument"]["pbcoreContributor"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreContributor"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreContributor"])
       if data["pbcoreDescriptionDocument"]["pbcoreContributor"] && data["pbcoreDescriptionDocument"]["pbcoreContributor"].count > 0
         data["pbcoreDescriptionDocument"]["pbcoreContributor"].each_with_index do |_contributor, index|
-          data["pbcoreDescriptionDocument"]["pbcoreContributor"][index]["contributorRole"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreContributor"][index]["contributorRole"])
+          data["pbcoreDescriptionDocument"]["pbcoreContributor"][index]["contributorRole"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreContributor"][index]["contributorRole"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreContributor"][index]["contributorRole"])
         end
       end
-      data["pbcoreDescriptionDocument"]["pbcorePublisher"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePublisher"])
+      data["pbcoreDescriptionDocument"]["pbcorePublisher"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePublisher"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePublisher"])
       if data["pbcoreDescriptionDocument"]["pbcorePublisher"] && data["pbcoreDescriptionDocument"]["pbcorePublisher"].count > 0
         data["pbcoreDescriptionDocument"]["pbcorePublisher"].each_with_index do |_publisher, index|
-          data["pbcoreDescriptionDocument"]["pbcorePublisher"][index]["publisherRole"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePublisher"][index]["publisherRole"])
+          data["pbcoreDescriptionDocument"]["pbcorePublisher"][index]["publisherRole"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePublisher"][index]["publisherRole"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePublisher"][index]["publisherRole"])
         end
       end
-      data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"])
+      data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"])
       if data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"] && data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"].count > 0
         data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"].each_with_index do |_rights_summary, index|
-          data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsSummary"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsSummary"])
-          data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsLink"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsLink"])
-          data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsEmbedded"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsEmbedded"])
+          data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsSummary"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsSummary"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsSummary"])
+          data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsLink"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsLink"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsLink"])
+          data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsEmbedded"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsEmbedded"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreRightsSummary"][index]["rightsEmbedded"])
         end
       end
 
       # instantiation
-      data["pbcoreDescriptionDocument"]["pbcoreInstantiation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"])
+      data["pbcoreDescriptionDocument"]["pbcoreInstantiation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"])
       #   instantiation contents
       if data["pbcoreDescriptionDocument"]["pbcoreInstantiation"]
         data["pbcoreDescriptionDocument"]["pbcoreInstantiation"].each_with_index do |_instantiation, index|
 
           # stantch fields
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"])
           # repeatable? unclear
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationDate"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationDate"])
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationDimensions"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationaDimensions"])
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationGenerations"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationGeneratioans"])
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationTimeStart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationTimeStarta"])
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationLanguage"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationLanguage"])
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"])
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationAnnotation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationAnnotation"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationDate"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationDate"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationDate"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationDimensions"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationaDimensions"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationaDimensions"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationGenerations"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationGeneratioans"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationGeneratioans"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationTimeStart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationTimeStarta"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationTimeStarta"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationLanguage"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationLanguage"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationLanguage"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationIdentifier"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationAnnotation"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationAnnotation"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationAnnotation"])
 
           # who knows!
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationPart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationPart"])
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationExtension"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationExtension"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationPart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationPart"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationPart"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationExtension"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationExtension"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationExtension"])
 
           # essence tracks
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"])
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"])
           if data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"]
             data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"].each_with_index do |esstrack, essindex|
 
               # essence track contents
-              esstrack["essenceTrackIdentifier"] = arrayify_node(esstrack["essenceTrackIdentifier"])
-              esstrack["essenceTrackLanguage"] = arrayify_node(esstrack["essenceTrackLanguage"])
-              esstrack["essenceTrackIdentifier"] = arrayify_node(esstrack["essenceTrackIdentifier"])
-              esstrack["essenceTrackIdentifier"] = arrayify_node(esstrack["essenceTrackIdentifier"])
-              esstrack["essenceTrackAnnotation"] = arrayify_node(esstrack["essenceTrackAnnotation"])
+              esstrack["essenceTrackIdentifier"] = arrayify_node(esstrack["essenceTrackIdentifier"]) if arrayify_node(esstrack["essenceTrackIdentifier"])
+              esstrack["essenceTrackLanguage"] = arrayify_node(esstrack["essenceTrackLanguage"]) if arrayify_node(esstrack["essenceTrackLanguage"])
+              esstrack["essenceTrackIdentifier"] = arrayify_node(esstrack["essenceTrackIdentifier"]) if arrayify_node(esstrack["essenceTrackIdentifier"])
+              esstrack["essenceTrackIdentifier"] = arrayify_node(esstrack["essenceTrackIdentifier"]) if arrayify_node(esstrack["essenceTrackIdentifier"])
+              esstrack["essenceTrackAnnotation"] = arrayify_node(esstrack["essenceTrackAnnotation"]) if arrayify_node(esstrack["essenceTrackAnnotation"])
 
               # no repeat
               # essenceTrackType
@@ -128,7 +128,7 @@ module PBCore
               # essenceTrackDuration
 
               # yikes! oh well
-              esstrack["essenceTrackExtension"] = arrayify_node(esstrack["essenceTrackExtension"])
+              esstrack["essenceTrackExtension"] = arrayify_node(esstrack["essenceTrackExtension"]) if arrayify_node(esstrack["essenceTrackExtension"])
 
               # remove empty keys
               esstrack = esstrack.compact
@@ -143,8 +143,8 @@ module PBCore
       end
 
       # no guarantees
-      data["pbcoreDescriptionDocument"]["pbcorePart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePart"])
-      data["pbcoreDescriptionDocument"]["pbcoreExtension"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreExtension"])
+      data["pbcoreDescriptionDocument"]["pbcorePart"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePart"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcorePart"])
+      data["pbcoreDescriptionDocument"]["pbcoreExtension"] = arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreExtension"]) if arrayify_node(data["pbcoreDescriptionDocument"]["pbcoreExtension"])
 
       # remove empty keys
       data["pbcoreDescriptionDocument"] = data["pbcoreDescriptionDocument"].compact
