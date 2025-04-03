@@ -148,11 +148,6 @@ module PBCore
 
       # remove empty keys
       data["pbcoreDescriptionDocument"] = data["pbcoreDescriptionDocument"].compact
-
-      puts "SHOW ME PLEASE"
-      puts data
-      puts data.inspect
-
       output = JSON.pretty_generate(data)
     end
   end
