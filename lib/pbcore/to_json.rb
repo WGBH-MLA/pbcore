@@ -121,14 +121,14 @@ module PBCore
               esstrack["essenceTrackExtension"] = arrayify_node(esstrack["essenceTrackExtension"])
 
               # remove empty keys
-              esstrack = esstrack.compact
+              esstrack = esstrack
 
               data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]["instantiationEssenceTrack"][essindex] = esstrack
             end
           end
 
           # remove empty keys
-          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index] = data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index].compact
+          data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index] = data["pbcoreDescriptionDocument"]["pbcoreInstantiation"][index]
         end
       end
 
