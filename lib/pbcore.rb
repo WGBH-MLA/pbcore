@@ -30,6 +30,8 @@ module PBCore
   autoload :Instantiation,            'pbcore/instantiation'
   autoload :InstantiationDocument,    'pbcore/instantiation_document'
   autoload :Vocab,                    'pbcore/vocab'
+  # utilities
+  autoload :ToJSON,                   'pbcore/to_json'
 
   class << self
     def xsd
