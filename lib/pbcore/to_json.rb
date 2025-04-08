@@ -21,7 +21,7 @@ module PBCore
     def pbxml_to_json(xml)
         # escape double quotes (because they may appear in node values)
       xml = xml.gsub(%(\"), %(\\\"))
-      json = pbcore_xml_to_json_xsl_doc.transform(Nokogiri::XML(xml))
+      json = pbxml_to_json_xsl_doc.transform(Nokogiri::XML(xml))
       data = JSON.parse(json)
       raise "No Desc Doc TOO BAD" unless data && data["pbcoreDescriptionDocument"]
 
